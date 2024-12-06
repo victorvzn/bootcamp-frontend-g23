@@ -1,11 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* 
+  font-family: "Fraunces", serif;
+  font-family: "Montserrat", sans-serif;
+*/
+
 body {
   background-color: hsl(30, 38%, 92%);
 
   font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+
+  margin: 0;
+
+  display: flex; /* Flexbox */
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
 }
 
 main {
+
   border: 1px solid red;
 
   width: 650px;
+
+  display: flex;
+}
+
+.photo {
+  background-color: blue;
+
+  width: 350px;
+}
+
+.content {
+  background-color: orange;
+
+  width: 300px;
 }

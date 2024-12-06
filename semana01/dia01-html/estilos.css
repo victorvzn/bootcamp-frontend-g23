@@ -65,9 +65,20 @@ main {
 
 .content h1 {
   margin: 0;
-  /*
-    font-family: ????;
-    font-size: ????;
-    color: ????;
-  */
+  font-family: "Fraunces", serif;
+  font-size: 42px; /* 14px * 3 = 42px */
+  color: hsl(212, 21%, 14%);
+  font-weight: 700;
+}
+
+.content p {
+  margin: 0;
+
+  font-weight: 500;
+  color: hsl(228, 12%, 48%);
+  line-height: 1.5;
+}
+
+.content span {
+  
 }

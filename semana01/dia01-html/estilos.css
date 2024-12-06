@@ -26,6 +26,8 @@ main {
 
   width: 650px;
 
+  min-height: 400px;
+
   display: flex;
 }
 
@@ -33,6 +35,10 @@ main {
   background-color: blue;
 
   width: 350px;
+
+  background-image: url(./images/image-product-desktop.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .content {

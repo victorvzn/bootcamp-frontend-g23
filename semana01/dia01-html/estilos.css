@@ -80,5 +80,26 @@ main {
 }
 
 .content span {
-  
+  font-family: "Fraunces", serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: hsl(158, 36%, 37%);
+}
+
+.content s {
+  color: hsl(228, 12%, 48%);
+}
+
+.content button {
+  border: 0;
+
+  font-family: "Montserrat", sans-serif;
+  /* font-family: inherit; */
+  font-weight: 700;
+  background-color: hsl(158, 36%, 37%);
+  color: hsl(0, 0%, 100%);
+
+  padding: 14px;
+  border-radius: 7px;
+  cursor: pointer;
 }

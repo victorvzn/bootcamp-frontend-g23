@@ -15,7 +15,7 @@ body {
 
 .contact-form {
   background-color: hsl(0, 0%, 100%);
-  width: 400px;
+  min-width: 400px;
   padding: 32px;
   border-radius: 16px;
 }
@@ -24,4 +24,50 @@ h1 {
   margin: 0;
   margin-bottom: 32px;
   color: hsl(187, 24%, 22%);
+}
+
+label {
+  border: 1px solid red;
+
+  display: block;
+  margin-bottom: 16px;
+}
+
+label input,
+label textarea {
+  display: flex;
+
+  margin-top: 8px;
+}
+
+.row {
+  display: grid;
+  
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+input[type=text],
+input[type=email],
+textarea {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid hsl(186, 15%, 59%);
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  border: none;
+  background-color: hsl(169, 82%, 27%);
+  color: hsl(0, 0%, 100%);
+  border-radius: 8px;
+  padding: 16px;
+  font-weight: 700;
+}
+
+.required {
+  color: hsl(169, 82%, 27%);
+  font-weight: 700;
 }

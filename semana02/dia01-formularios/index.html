@@ -10,7 +10,7 @@
     >
   </head>
   <body>
-    <main>
+    <main class="container">
       <h1>Formularios + Inputs + Validaciones</h1>
 
       <form>
@@ -28,6 +28,60 @@
           Input (Desactivado)
           <input type="text" placeholder="Input desactivado" disabled value="Hola a todos" />
         </label>
+
+        <label>
+          Input tipo number
+          <input type="number" placeholder="Edad Ej. 18" id="edad" name="edad" />
+        </label>
+
+        <label>
+          Input tipo email
+          <input type="email" placeholder="Correo Ej. correo@gmail.com" name="email" />
+        </label>
+
+        <label>
+          Input tipo range (edad)
+          <input type="range" name="range_edad" min="18" max="65" step="10" value="70" />
+        </label>
+
+        <label>
+          Input tipo teléfono
+          <input type="tel" placeholder="(+51) 999 999 999" name="telefono" />
+        </label>
+
+        <label>
+          Input tipo url
+          <input type="url" placeholder="Sitio web Ej. misitio.com" name="url" />
+        </label>
+
+        <label>
+          Input tipo password
+          <input type="password" placeholder="Password" name="password" />
+        </label>
+
+        <label>
+          Input tipo color
+          <input type="color" value="#ff0000" />
+        </label>
+
+        <label>
+          Input tipo search
+          <input type="search" />
+        </label>
+
+        <label>
+          Input tipo file (seleccionar .jpg) uno a la vez
+          <input type="file" accept=".jpg,.jpeg" />
+        </label>
+
+        <label>
+          Input tipo file (seleccionar multiples archivos)
+          <input type="file" multiple />
+        </label>
+
+        <input type="hidden" value="datos-ocultos" name="datooculto" /> 
+
+        <input type="submit" value="Guardar" />
       </form>
     </main>
   </body>

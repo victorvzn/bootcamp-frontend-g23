@@ -27,13 +27,13 @@ h1 {
 }
 
 label {
-  border: 1px solid red;
-
+  /* border: 1px solid red; */
   display: block;
   margin-bottom: 16px;
 }
 
-label input,
+label input[type=text],
+label input[type=email],
 label textarea {
   display: flex;
 
@@ -67,7 +67,27 @@ input[type=submit] {
   font-weight: 700;
 }
 
+input[type=submit]:hover {
+  background-color: hsla(169, 82%, 27%, 0.79);
+}
+
 .required {
   color: hsl(169, 82%, 27%);
   font-weight: 700;
+}
+
+.query-type {
+  border: 1px solid hsl(186, 15%, 59%);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+  padding: 12px;
+  margin-top: 8px;
+  border-radius: 8px;
+}
+
+.flex {
+  display: flex;
+  gap: 8px;
 }

@@ -27,20 +27,33 @@
         <input type="text" name="email" />
       </label>
 
-      Query Type
-      General Enquiry
-      Support Request
-      Please select a query type
+      <label>
+        Query Type <span class="required">*</span>
+        
+        <div class="row">
+          <div class="query-type">
+            <input type="radio" name="query_type" />
+            General Enquiry
+          </div>
+          <div class="query-type">
+            <input type="radio" name="query_type" />
+            Support Request
+          </div>
+        </div>
+      </label>
 
-      Message
+      <label>
+        Message <span class="required">*</span>
 
-      I consent to being contacted by the team
-      To submit this form, please consent to being contacted
+        <textarea rows="5"></textarea>
+      </label>
 
-      Submit
+      <label>
+        <input type="checkbox" />
+        I consent to being contacted by the team
+      </label>
 
-      Message Sent!
-      Thanks for completing the form. We'll be in touch soon!
+      <input type="submit" value="Submit" />
     </form>
   </main>
 </body>

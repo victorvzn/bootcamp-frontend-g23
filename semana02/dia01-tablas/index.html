@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tablas</title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+  >
+</head>
+<body>
+  <main class="container">
+    <h2>Tablas</h2>
+
+    <table border>
+      <thead>
+        <tr>
+          <th># Fila1, Celda1</th>
+          <th>Fila1, Celda2</th>
+          <th>Fila1, Celda3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1, Fila2, Celda1</td>
+          <td>Fila2, Celda2</td>
+          <td>Fila2, Celda3</td>
+        </tr>
+        <tr>
+          <td>2, Fila3, Celda1</td>
+          <td>Fila3, Celda2</td>
+          <td>Fila3, Celda3</td>
+        </tr>
+        <tr>
+          <td>3, Fila4, Celda1</td>
+          <td>Fila4, Celda2</td>
+          <td>Fila4, Celda3</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Fila3, Celda1</td>
+          <td>Fila3, Celda2</td>
+          <td>Fila3, Celda3</td>
+        </tr>
+        <tr>
+          <td colspan="2">TOTAL</td>
+          <td>0.00</td>
+        </tr>
+        <tr>
+          <td colspan="2">Fila a, celda1</td>
+          <td rowspan="2">Fila b, celda2</td>
+        </tr>
+        <tr>
+          <td colspan="2">Fila c, celda 3</td>
+        </tr>
+      </tfoot>
+    </table>
+  </main>
+</body>
+</html>

@@ -3,9 +3,28 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formularios</title>
   </head>
   <body>
-    <h1>Formularios + Inputs + Validaciones</h1>
+    <main>
+      <h1>Formularios + Inputs + Validaciones</h1>
+
+      <form>
+        <h2>Inputs</h2>
+
+        <label for="text1">Input tipo texto</label>
+        <input type="text" placeholder="Ingresa algún texto" id="text1" />
+
+        <label>
+          Input (Solo lectura)
+          <input type="text" placeholder="Input de solo lectura" readonly value="Copia este texto" />
+        </label>
+
+        <label>
+          Input (Desactivado)
+          <input type="text" placeholder="Input desactivado" disabled value="Hola a todos" />
+        </label>
+      </form>
+    </main>
   </body>
 </html>

@@ -6,32 +6,42 @@
   <title>Contact form</title>
 </head>
 <body>
-  Contact Us
+  <main class="contact-form">
+    <h1>Contact Us</h1>
 
-  First Name
-  This field is required
+    <form>
+      <div class="row">
+        <label>
+          First Name <span class="required">*</span>
+          <input type="text" name="first_name" />
+        </label>
+  
+        <label>
+          Last Name <span class="required">*</span>
+          <input type="text" name="last_name" />
+        </label>
+      </div>
 
-  Last Name
-  This field is required
+      <label>
+        Email Address <span class="required">*</span>
+        <input type="text" name="email" />
+      </label>
 
-  Email Address
-  Please enter a valid email address
-  This field is required
+      Query Type
+      General Enquiry
+      Support Request
+      Please select a query type
 
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
+      Message
 
-  Message
-  This field is required
+      I consent to being contacted by the team
+      To submit this form, please consent to being contacted
 
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
+      Submit
 
-  Submit
-
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
+      Message Sent!
+      Thanks for completing the form. We'll be in touch soon!
+    </form>
+  </main>
 </body>
 </html>

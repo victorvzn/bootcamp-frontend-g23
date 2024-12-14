@@ -2,8 +2,24 @@
   display: none;
 }
 
-
 body {
   background-color: aquamarine;
 }
 
+
+.header {
+  border: 1px solid red;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 48px; /* 16px * 3 = 48px */
+}
+
+.header__nav {
+  border: 1px solid blue;
+
+  display: flex;
+  gap: 48px;  /* 16px * 3 = 48px */
+}

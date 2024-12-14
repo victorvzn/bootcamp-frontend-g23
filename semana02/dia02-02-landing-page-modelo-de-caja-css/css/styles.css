@@ -67,7 +67,7 @@ img {
 /* HERO SECTION */
 
 .hero {
-  /* border: 1px solid blue; */
+  border: 1px solid blue;
 
   display: flex;
   flex-direction: column;
@@ -75,7 +75,12 @@ img {
   gap: 2rem; /* 14px * 2 = 28px = 2rem */
 
   padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-bottom: 18rem;
+
+  background-image: url(../images/bg-curvy-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
 }
 
 .hero__title {

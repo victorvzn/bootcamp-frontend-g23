@@ -49,7 +49,7 @@ img {
 /* HEADER SECTION */
 
 .header {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
   display: flex;
   justify-content: space-between;
@@ -67,7 +67,7 @@ img {
 /* HERO SECTION */
 
 .hero {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 
   display: flex;
   flex-direction: column;
@@ -76,6 +76,41 @@ img {
 
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
 
-  
+.hero__title {
+  /* border: 1px solid red; */
+
+  /* width: 720px; */
+  width: min(100% - 3rem, 720px);
+
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.hero__text {
+  /* border: 1px solid red; */
+
+  width: min(100% - 3rem, 720px);
+
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.hero__button {
+  font-weight: 700;
+
+  border: none;
+  border-radius: 7rem;
+  padding: 1rem 1.5rem;
+  min-width: 220px;
+  color: hsl(0, 0%, 100%);
+  background: linear-gradient(
+    90deg,
+    hsl(176, 68%, 64%) 0%,
+    hsl(198, 60%, 50%) 100%
+  );
 }

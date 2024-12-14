@@ -38,6 +38,11 @@ img {
   display: none;
 }
 
+.wrapper {
+  width: 1000px;
+  /* TODO: Adaptar el ancho de la página a dispositivos móviles */
+}
+
 /* HEADER SECTION */
 
 .header {
@@ -46,7 +51,8 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  
+  margin: 0 auto; /* 0: TOP, BOTTOM / auto: LEFT, RIGHT */
   margin-top: 48px; /* 16px * 3 = 48px */
 }
 

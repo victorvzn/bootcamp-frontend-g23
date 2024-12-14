@@ -67,7 +67,7 @@ img {
 /* HERO SECTION */
 
 .hero {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 
   display: flex;
   flex-direction: column;
@@ -118,4 +118,36 @@ img {
     hsl(176, 68%, 64%) 0%,
     hsl(198, 60%, 50%) 100%
   );
+}
+
+/* FEATURES SECTION */
+
+.features {
+  /* border: 1px solid red; */
+
+  display: grid;
+  grid-template-columns: 340px 340px;
+  /* grid-template-rows: 240px 240px; */
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+
+  background-color: hsl(218, 28%, 13%);
+}
+
+.feature {
+  /* border: 1px solid green; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.feature__title {
+  font-family: "Raleway", sans-serif;
+}
+
+.feature__text {
+  text-align: center;
 }

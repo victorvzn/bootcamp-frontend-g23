@@ -30,6 +30,8 @@ a {
 
 img {
   /* TODO: RWD para imágenes */
+  max-width: 100%;
+  height: auto;
 }
 
 /* UTILS */
@@ -39,8 +41,9 @@ img {
 }
 
 .wrapper {
-  width: 1000px;
+  /* width: 1000px; */
   /* TODO: Adaptar el ancho de la página a dispositivos móviles */
+  width: min(100% - 48px, 1440px);
 }
 
 /* HEADER SECTION */

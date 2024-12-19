@@ -258,4 +258,48 @@ img {
 
 .early-access {
   border: 1px solid red;
+
+  background-color: hsl(218, 28%, 13%);
+
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.early-access--wrapper {
+  background-color: hsl(219, 30%, 18%);
+  
+  width: min(100% - 3rem, 50rem); /* 50rem = 50 * 16px = 800px */
+  margin: 0 auto;
+  
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 5px #111;
+}
+
+.early-access--wrapper h2 {
+   font-size: 2rem;
+}
+
+.early-access--wrapper p {
+  text-align: center;
+}
+
+.early-access--wrapper form {
+  border: 1px solid red;
+
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}
+
+.early-access--wrapper input[type=text] {
+  border: none;
+  border-radius: 7rem;
+  padding: 1rem 1.5rem; /* TOP BOTTOM / LEFT RIGHT */
+  width: min(100%, 30rem);
 }

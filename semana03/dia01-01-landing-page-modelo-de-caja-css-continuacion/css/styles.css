@@ -232,3 +232,30 @@ img {
   margin-bottom: 2rem;
   font-size: 1.5rem;
 }
+
+.testimonial__profile {
+  /* border: 1px solid red; */
+
+  display: flex;
+  gap: .5rem;
+
+  font-size: 0.9rem;
+}
+
+.testimonial__profile img {
+  border-radius: 50%;
+}
+
+.testimonial__profile h4 {
+  font-weight: 700;
+}
+
+.testimonial__profile h5 {
+  font-weight: 400;
+}
+
+/* EARLY ACCESS SECTION */
+
+.early-access {
+  border: 1px solid red;
+}

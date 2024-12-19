@@ -257,7 +257,7 @@ img {
 /* EARLY ACCESS SECTION */
 
 .early-access {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
   background-color: hsl(218, 28%, 13%);
 
@@ -290,7 +290,7 @@ img {
 }
 
 .early-access--wrapper form {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
   display: flex;
   gap: 2rem;
@@ -301,5 +301,19 @@ img {
   border: none;
   border-radius: 7rem;
   padding: 1rem 1.5rem; /* TOP BOTTOM / LEFT RIGHT */
-  width: min(100%, 30rem);
+  width: min(100%, 35rem);
+}
+
+.early-access--wrapper input[type=submit] {
+  font-weight: 700;
+
+  border: none;
+  border-radius: 7rem;
+  padding: 1rem 1.5rem;
+  color: hsl(0, 0%, 100%);
+  background: linear-gradient(
+    90deg,
+    hsl(176, 68%, 64%) 0%,
+    hsl(198, 60%, 50%) 100%
+  );
 }

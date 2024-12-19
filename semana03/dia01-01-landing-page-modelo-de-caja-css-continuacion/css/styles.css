@@ -317,3 +317,52 @@ img {
     hsl(198, 60%, 50%) 100%
   );
 }
+
+/* FOOTER SECTION */
+
+.footer--wrapper {
+  background-color: hsl(216, 53%, 9%);
+
+  padding: 3rem;
+}
+
+.footer {
+  /* background-color: blue; */
+
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+
+  padding: 2rem 0;
+}
+
+.footer__description {
+  width: 22rem;
+
+  display: flex;
+  align-items: start;
+  gap: 1.5rem;
+}
+
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footer__contact span {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footer__social {
+  display: flex;
+  gap: 1.5rem;
+}

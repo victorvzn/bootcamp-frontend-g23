@@ -151,3 +151,57 @@ img {
 .feature__text {
   text-align: center;
 }
+
+/* COLLABORATION SECTION */
+
+.collaboration {
+  /* border: 1px solid red; */
+
+  background-color: hsl(218, 28%, 13%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.how_works {
+  /* border: 1px solid yellow; */
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  width: min(100% - 3rem, 480px);
+}
+
+.how_works__title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.how_works__text {
+  font-family: "Open Sans", serif;
+}
+
+.how_works__button {
+  color: hsl(176, 68%, 64%);
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* 0.5rem = 0.5 * 16px = 8px */
+
+  border-bottom: 1px solid hsl(176, 68%, 64%);
+  padding-bottom: 0.5rem;
+  width: 10.8rem;
+}
+
+/* TODO: TESTIMONIAL SECTION */
+
+.testimonials {
+  border: 1px solid red;
+}

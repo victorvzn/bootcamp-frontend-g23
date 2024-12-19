@@ -233,11 +233,19 @@ img {
 
 .testimonials--wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
 
   margin: 0 auto;
+}
+
+/* NOTE: Se aplica a dispositivos como desktop */
+@media (min-width: 1200px) {
+  .testimonials--wrapper {
+    flex-direction: row;
+  }
 }
 
 .testimonial {
@@ -315,8 +323,16 @@ img {
   /* border: 1px solid red; */
 
   display: flex;
+  flex-direction: column;
   gap: 2rem;
   width: 100%;
+}
+
+/* NOTE: Se aplica a dispositivos como desktop */
+@media (min-width: 1200px) {
+  .early-access--wrapper form {
+    flex-direction: row;
+  }
 }
 
 .early-access--wrapper input[type=text] {
@@ -352,10 +368,18 @@ img {
   /* background-color: blue; */
 
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   gap: 2rem;
 
   padding: 2rem 0;
+}
+
+/* NOTE: Se aplica a dispositivos como desktop */
+@media (min-width: 1200px) {
+  .footer {
+    flex-direction: row;
+  }
 }
 
 .footer__description {

@@ -203,5 +203,32 @@ img {
 /* TODO: TESTIMONIAL SECTION */
 
 .testimonials {
-  border: 1px solid red;
+  /* border: 1px solid red; */
+
+  background-color: hsl(218, 28%, 13%);
+  padding-top: 8rem;
+}
+
+.testimonials--wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  margin: 0 auto;
+}
+
+.testimonial {
+  /* border: 1px solid yellow; */
+
+  /* padding: TOP RIGHT BOTTOM LEFT */
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 0.5rem solid hsl(216, 53%, 9%, 0.3);
+  background-color: hsl(219, 30%, 18%);
+}
+
+.testimonial__text {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
 }

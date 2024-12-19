@@ -5,6 +5,13 @@ font-family: "Raleway", sans-serif;
 font-family: "Open Sans", serif;
 */
 
+/*
+  576px  -> pantallas pequeñas (celulares)
+  768px  -> pantallas pequeñas (tablets y celulares)
+  992px  -> pantallas medianas (Desktop)
+  1200px -> pantallas grandes (Desktops, TVs)
+*/
+
 /* GENERAL */
 
 * { /* Selector universal */
@@ -126,13 +133,20 @@ img {
   /* border: 1px solid red; */
 
   display: grid;
-  grid-template-columns: 340px 340px;
+  grid-template-columns: 340px;
   /* grid-template-rows: 240px 240px; */
   justify-content: center;
   align-items: center;
   gap: 5rem;
 
   background-color: hsl(218, 28%, 13%);
+}
+
+/* NOTE: Se aplica a dispositivos como desktop */
+@media (min-width: 1200px) {
+  .features {
+    grid-template-columns: 340px 340px;
+  }
 }
 
 .feature {
@@ -160,12 +174,20 @@ img {
   background-color: hsl(218, 28%, 13%);
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 4rem;
 
   padding-top: 8rem;
   padding-bottom: 8rem;
+}
+
+/* NOTE: Se aplica a dispositivos como desktop */
+@media (min-width: 1200px) {
+  .collaboration {
+    flex-direction: row;
+  }
 }
 
 .how_works {

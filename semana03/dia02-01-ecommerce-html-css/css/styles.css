@@ -118,6 +118,57 @@ a {
 
 /* PRODUCT */
 
-.product {
+.product__subtitle {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: hsl(219, 9%, 45%);
+  letter-spacing: .2rem;
+}
 
+.product__title {
+  color: hsl(220, 13%, 13%);
+  font-size: 3rem; /* 2rem = 32px */
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+.product__description {
+  margin-top: 1rem;
+  line-height: 1.5;
+  color: hsl(219, 9%, 45%);
+}
+
+.product__price {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+}
+
+.product__wrapper {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.product__amount {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.product__discount {
+  background-color: hsl(220, 13%, 13%);
+  color: hsl(0, 0%, 100%);
+
+  padding: 0.1rem .5rem;
+  border-radius: .5rem;
+
+  font-weight: 400;
+}
+
+.product__price-with-discount {
+  color: red;
+  
 }

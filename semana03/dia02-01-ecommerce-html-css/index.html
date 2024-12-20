@@ -27,37 +27,57 @@
   </header>
 
   <main class="product-detail wrapper">
-    <h2>Sneaker Company</h2>
+    <section class="gallery">
+      <img class="gallery__cover" src="./images/image-product-1.jpg" />
 
-    <h1>Fall Limited Edition Sneakers</h1>
-
-    <p>These low-profile sneakers are your perfect casual wear companion. Featuring a 
-      durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
-
-    <div class="product__price">
-      <div class="product__wrapper">
-        <span class="product__amount">$125.00</span>
-        <span class="product__discount">50%</span>
+      <div class="gallery__slider">
+        <div class="gallery__slider--active">
+          <img src="./images/image-product-1-thumbnail.jpg" width="90" height="90" />
+        </div>
+        <div>
+          <img src="./images/image-product-2-thumbnail.jpg" width="90" height="90" />
+        </div>
+        <div>
+          <img src="./images/image-product-3-thumbnail.jpg" width="90" height="90" />
+        </div>
+        <div>
+          <img src="./images/image-product-4-thumbnail.jpg" width="90" height="90" />
+        </div>
       </div>
-      <span class="product__price-with-discount">$250.00</span>
-    </div>
+    </section>
+    <section class="product">
+      <h2>Sneaker Company</h2>
 
-    <form class="product__form">
-      <div class="product__quantity">
-        <button>
-          <img src="./images/icon-minus.svg" />
-        </button>
-        <input type="text" readonly value="1" />
-        <button>
-          <img src="./images/icon-plus.svg" />
-        </button>
+      <h1>Fall Limited Edition Sneakers</h1>
+
+      <p>These low-profile sneakers are your perfect casual wear companion. Featuring a 
+        durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+
+      <div class="product__price">
+        <div class="product__wrapper">
+          <span class="product__amount">$125.00</span>
+          <span class="product__discount">50%</span>
+        </div>
+        <span class="product__price-with-discount">$250.00</span>
       </div>
 
-      <button class="product__add-to-cart">
-        <img src="./images/icon-cart.svg" />
-        Add to cart
-      </button>
-    </form>
+      <form class="product__form">
+        <div class="product__quantity">
+          <button>
+            <img src="./images/icon-minus.svg" />
+          </button>
+          <input type="text" readonly value="1" />
+          <button>
+            <img src="./images/icon-plus.svg" />
+          </button>
+        </div>
+
+        <button class="product__add-to-cart">
+          <img src="./images/icon-cart.svg" />
+          Add to cart
+        </button>
+      </form>
+    </section>
   </main>
 </body>
 </html>

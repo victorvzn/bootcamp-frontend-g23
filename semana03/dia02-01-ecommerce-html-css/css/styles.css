@@ -72,4 +72,8 @@ a {
   color: hsl(220, 14%, 75%);
 }
 
-/* */
+/* PRODUCT-DETAIL */
+
+.product-detail {
+  border: 1px solid red;
+}

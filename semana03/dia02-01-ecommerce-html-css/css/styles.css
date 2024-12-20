@@ -26,18 +26,23 @@ a {
   color: inherit;
 }
 
+/* UTILS */
+
 .hidden {
   display: none;
 }
 
 .wrapper {
-  
+  /* width: 1200px; */
+  width: min(100%, 1200px);
+
+  margin: 0 auto; /* TOP BOTTOM / LEFT RIGHT */
 }
 
 /* HEADER */
 
 .header {
-  /* border: 1px solid red; */
+  border: 1px solid red;
 
   height: 4.5rem; /* 4.5 * 16px = 72px */
 
@@ -59,4 +64,12 @@ a {
   display: flex;
   align-items: center;
   gap: 2rem;
+}
+
+.header__links {
+  display: flex;
+  font-size: .9rem;
+  font-weight: 400; /* Por defecto */
+  gap: 1rem;
+  color: hsl(220, 14%, 75%);
 }

@@ -76,4 +76,44 @@ a {
 
 .product-detail {
   border: 1px solid red;
+
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+
+  padding: 5rem 3rem;
 }
+
+/* GALLERY */
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.gallery__cover {
+  border-radius: 1rem;
+}
+
+.gallery__slider {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gallery__slider div {
+  width: 90px;
+  height: 90px;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.gallery__slider--active {
+  border: 3px solid hsl(26, 100%, 55%);
+}
+
+.gallery__slider--active img {
+  opacity: .5;
+}
+
+/* PRODUCT */

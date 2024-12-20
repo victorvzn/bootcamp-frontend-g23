@@ -1,3 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+
+/* GENERAL */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: 16px; /* Por defecto */
+}
+
 body {
-  background-color: burlywood;
+  font-family: "Kumbh Sans", serif;
+}
+
+img {
+  /* RWD para imágenes */
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.hidden {
+  display: none;
 }

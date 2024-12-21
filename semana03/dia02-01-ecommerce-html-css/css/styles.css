@@ -283,7 +283,15 @@ a {
   display: flex;
   gap: 1.5rem;
   align-items: center;
+  flex-direction: column;
 
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 1200px) {
+  .product__form {
+    flex-direction: row;
+  }
 }
 
 .product__quantity {
@@ -292,7 +300,7 @@ a {
   border-radius: .5rem;
   overflow: hidden;
 
-  width: 300px;
+  /* width: 300px; */
 }
 
 .product__quantity button,
@@ -309,7 +317,11 @@ a {
   font-weight: 700;
   font-size: 1.4rem;
   text-align: center;
+
+  width: 100%;
 }
+
+
 
 .product__quantity button {
   cursor: pointer;

@@ -1,0 +1,24 @@
+/* PRODUCT-DETAIL */
+
+.product-detail {
+  /* border: 1px solid red; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  padding: 0;
+}
+
+/* DONE: Añadir el media query para la clase product-detail */
+
+@media(min-width: 1200px) {
+  .product-detail {
+    flex-direction: row;
+
+    gap: 5rem;
+
+    padding: 3rem 3rem;
+  }
+}

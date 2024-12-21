@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
 
+/*
+576px  -> pantallas pequeñas (celulares)
+768px  -> pantallas pequeñas (tablets y celulares)
+992px  -> pantallas medianas (Desktop)
+1200px -> pantallas grandes (Desktops, TVs)
+*/
+
 /* GENERAL */
 
 * {
@@ -55,7 +62,24 @@ a {
 .header__wrapper {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
+}
+
+ /* Estas media querys se aplican a dispositivos desde desktops + */
+@media (min-width: 1200px) {
+  .header__wrapper {
+    gap: 2rem;
+  }
+}
+
+.header__menu {
+  cursor: pointer;
+}
+
+@media (min-width: 1200px) {
+  .header__menu {
+    display: none;
+  }
 }
 
 .header__icons {
@@ -65,11 +89,17 @@ a {
 }
 
 .header__links {
-  display: flex;
+  display: none;
   font-size: .9rem;
   font-weight: 400; /* Por defecto */
   gap: 1rem;
   color: hsl(220, 14%, 75%);
+}
+
+@media (min-width: 1200px) {
+  .header__links {
+    display: flex;
+  }
 }
 
 /* PRODUCT-DETAIL */
@@ -83,6 +113,8 @@ a {
 
   padding: 3rem 3rem;
 }
+
+/* TODO: Añadir el media query para la clase product-detail */
 
 /* GALLERY */
 

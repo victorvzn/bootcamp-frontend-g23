@@ -68,9 +68,15 @@ a {
 }
 
 .header__menu {
-  display: flex;
-  gap: 1.5rem; /* 1.5 * 16px = 24px */
-  text-transform: capitalize;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .header__menu {
+    display: flex;
+    gap: 1.5rem; /* 1.5 * 16px = 24px */
+    text-transform: capitalize;
+  }
 }
 
 .header__menu a {
@@ -146,13 +152,21 @@ a {
   border-radius: 50%;
 }
 
+/* STACK SECTION */
+
 .stack {
   /* border: 1px solid red; */
 
   display: grid;
   gap: 1.5rem;
   /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; */
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 768px) {
+  .stack {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
 
 .stack__wrap {
@@ -179,8 +193,41 @@ a {
   border-radius: 0.5rem;
 }
 
+/* SKILLS SECTION */
+
+/* TODO: terminar esta parte de la maquetación para el próximo jueves 9/01/25 */
+
+/* PROJECTS SECTION */
+
+/* TODO: terminar esta parte de la maquetación para el próximo jueves 9/01/25 */
+
 /* FOOTER */
 
 .footer {
+  /* border: 1px solid red; */
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3rem;
+
+  height: 372px;
+
+  background-image: url(../images/bg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.footer__logo {
+  color: var(--primary-color-gold);
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.footer__copy {
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-semibold);
+  padding-bottom: 3.5rem;
 }

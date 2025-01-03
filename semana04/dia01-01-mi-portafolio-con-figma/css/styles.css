@@ -52,5 +52,43 @@ a {
 /* HEADER */
 
 .header {
-  border: 1px solid red;
+  /* border: 1px solid red; */
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 2rem;
 }
+
+.header__logo {
+  color: var(--primary-color-gold);
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.header__menu {
+  display: flex;
+  gap: 1.5rem; /* 1.5 * 16px = 24px */
+  text-transform: capitalize;
+}
+
+.header__menu a {
+  font-size: 1.125rem; /* 18px / 16px = 1.125rem */
+  font-weight: var(--font-weight-bold);
+}
+
+.header__menu--active {
+  color: var(--primary-color-gold);
+  border-bottom: 3px solid var(--primary-color-gold);
+}
+
+.header__menu a:hover {
+  color: var(--primary-color-gold);
+}
+
+.header__links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+} 

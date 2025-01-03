@@ -106,6 +106,11 @@ a {
   gap: 3rem;
 
   padding: 2rem;
+
+  background-image: url(../images/bg.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-color: contain;
 }
 
 .hero__gretting {
@@ -142,12 +147,36 @@ a {
 }
 
 .stack {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
   display: grid;
   gap: 1.5rem;
   /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; */
   grid-template-columns: repeat(6, 1fr);
+}
+
+.stack__wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stack__title {
+  font-size: 1rem;
+}
+
+.stack__box {
+  /* border: 1px solid yellow; */
+
+  width: 7rem; /* 7rem * 16px = 112px */
+  height: 7rem; /* 7rem * 16px = 112px */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--primary-color-blue2);
+  border-radius: 0.5rem;
 }
 
 /* FOOTER */

@@ -116,7 +116,7 @@ a {
   background-image: url(../images/bg.svg);
   background-repeat: no-repeat;
   background-position: bottom;
-  background-color: contain;
+  background-size: contain;
 }
 
 .hero__gretting {

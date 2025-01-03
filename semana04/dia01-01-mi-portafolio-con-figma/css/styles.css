@@ -92,3 +92,11 @@ a {
   align-items: center;
   gap: 0.5rem;
 } 
+
+/* TODO: Terminar la sección hero usando css */
+
+/* HERO SECTION */
+
+.hero {
+  border: 1px solid red;
+}

@@ -81,18 +81,24 @@ body:has(.sidebar--open) {
   background-color: var(--bg-3);
 
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-
-  grid-template-areas: 
-    "card1 card2 card3"
-    "card4 card4 card5"
-    "card4 card4 card6"
-  ;
+  grid-template-columns: 1fr;
 
   gap: 2rem;
 
   padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .main {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    grid-template-areas: 
+      "card1 card2 card3"
+      "card4 card4 card5"
+      "card4 card4 card6"
+    ;
+  }
 }
 
 .card {
@@ -107,25 +113,51 @@ body:has(.sidebar--open) {
 }
 
 .card:nth-child(1) {
-  grid-area: card1;
+  grid-area: unset;
 }
 
 .card:nth-child(2) {
-  grid-area: card2;
+  grid-area: unset;
 }
 
 .card:nth-child(3) {
-  grid-area: card3;
+  grid-area: unset;
 }
 
 .card:nth-child(4) {
-  grid-area: card4;
+  grid-area: unset;
 }
 
 .card:nth-child(5) {
-  grid-area: card5;
+  grid-area: unset;
 }
 
 .card:nth-child(6) {
-  grid-area: card6;
+  grid-area: unset;
+}
+
+@media(min-width: 768px) {
+  .card:nth-child(1) {
+    grid-area: card1;
+  }
+  
+  .card:nth-child(2) {
+    grid-area: card2;
+  }
+  
+  .card:nth-child(3) {
+    grid-area: card3;
+  }
+  
+  .card:nth-child(4) {
+    grid-area: card4;
+  }
+  
+  .card:nth-child(5) {
+    grid-area: card5;
+  }
+  
+  .card:nth-child(6) {
+    grid-area: card6;
+  }
 }

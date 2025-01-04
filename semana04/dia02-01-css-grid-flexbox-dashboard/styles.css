@@ -22,21 +22,33 @@ body {
   grid-template-rows: 60px 1fr;
 
   /* Templates Areas */
+  grid-template-areas: 
+    "sidebar header header"
+    "sidebar main settings"
+  ;
 }
 
 .header {
   background-color: var(--bg-1);
+
+  grid-area: header;
 }
 
 .sidebar {
+  grid-area: sidebar;
+
   background-color: var(--bg-2);
 }
 
 .settings {
+  grid-area: settings;
+
   background-color: var(--bg-2);
 }
 
 .main {
+  grid-area: main;
+
   background-color: var(--bg-3);
 }
 

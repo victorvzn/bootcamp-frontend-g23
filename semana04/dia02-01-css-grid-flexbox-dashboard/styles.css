@@ -4,3 +4,36 @@
   --bg-3: #8bd3dd;
   --bg-4: #f582ae;
 }
+
+/* RESET */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* GENERAL */
+
+body {
+  height: 100vh;
+}
+
+.header {
+  background-color: var(--bg-1);
+}
+
+.sidebar {
+  background-color: var(--bg-2);
+}
+
+.settings {
+  background-color: var(--bg-2);
+}
+
+.main {
+  background-color: var(--bg-3);
+}
+
+.card {
+  background-color: var(--bg-4);  
+}

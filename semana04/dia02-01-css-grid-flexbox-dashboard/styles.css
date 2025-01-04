@@ -5,6 +5,7 @@
   --bg-4: #f582ae;
 
   /* --sidebarWidth: 300px; */
+  /* --settingsWidth: 200px; */
 }
 
 /* RESET */
@@ -20,7 +21,7 @@ body {
   height: 100vh;
 
   display: grid;
-  grid-template-columns: var(--sidebarWidth, 100px) 1fr 0px;
+  grid-template-columns: var(--sidebarWidth, 100px) 1fr var(--settingsWidth, 0px);
   grid-template-rows: 60px 1fr;
 
   /* Templates Areas */
@@ -28,6 +29,8 @@ body {
     "sidebar header header"
     "sidebar main settings"
   ;
+
+  transition: 300ms;
 }
 
 .hidden {
@@ -73,6 +76,14 @@ body:has(.sidebar--open) {
   padding: 1rem;
 
   display: none;
+}
+
+.settings--open {
+  display: block;
+}
+
+body:has(.settings--open) {
+  --settingsWidth: 200px;
 }
 
 .main {

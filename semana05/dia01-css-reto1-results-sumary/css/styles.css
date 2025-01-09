@@ -30,6 +30,50 @@
   --neutral-dark-gray-blue: hsl(224, 30%, 27%);
 }
 
+/* GENERALES */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: var(--font-size);
+}
+
 body {
+  /* border: 6px solid blue; */
+
+  font-family: var(--font-family);
   background-color: var(--neutral-pale-blue);
+
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.summary {
+  /* border: 1px solid red; */
+
+  background-color: var(--neutral-white);
+
+  display: flex;
+
+  border-radius: 1rem;
+}
+
+.result {
+  /* border: 1px solid red; */
+
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: brown;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
 }

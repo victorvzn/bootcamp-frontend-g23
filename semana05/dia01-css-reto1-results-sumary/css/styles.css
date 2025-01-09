@@ -13,10 +13,10 @@
 
   /* COLORS */
 
-  --primary-light-red: hsl(0, 100%, 67%);
-  --primary-orangey-yellow: hsl(39, 100%, 56%);
-  --primary-green-teal: hsl(166, 100%, 37%);
-  --primary-cobalt-blue: hsl(234, 85%, 45%);
+  --primary-light-red: 0, 100%, 67%;
+  --primary-orangey-yellow: 39, 100%, 56%;
+  --primary-green-teal: 166, 100%, 37%;
+  --primary-cobalt-blue: 234, 85%, 45%;
 
   --gradients-light-slate-blue-background: hsl(252, 100%, 67%);
   --gradients-light-royal-blue-background: hsl(241, 81%, 54%);
@@ -124,4 +124,96 @@ body {
   font-weight: var(--font-weight-bold);
   color: var(--neutral-light-lavender);
   text-align: center;
+}
+
+.list {
+  /* border: 1px solid red; */
+
+  width: 100%;
+  padding: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.list__title {
+  color: var(--neutral-dark-gray-blue);
+}
+
+.list__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.list__row {
+  /* border: 1px solid blue; */
+
+  display: flex;
+  justify-content: space-between;
+  padding: .7rem 1rem;
+  border-radius: .5rem;
+
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.list-row__title {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.list-row__stats {
+  color: var(--neutral-dark-gray-blue);
+}
+
+.list-row__stats span:nth-last-child(1),
+.list-row__stats span:nth-last-child(2) {
+  color: var(--neutral-light-lavender);
+}
+
+.list__row--reaction {
+  background-color: hsla(var(--primary-light-red), 0.1);
+}
+
+.list__row--reaction .list-row__title {
+  color: hsl(var(--primary-light-red));
+}
+
+.list__row--memory {
+  background-color: hsla(var(--primary-orangey-yellow), 0.1);
+}
+
+.list__row--memory .list-row__title {
+  color: hsl(var(--primary-orangey-yellow));
+}
+
+.list__row--verbal {
+  background-color: hsla(var(--primary-green-teal), 0.1);
+}
+
+.list__row--verbal .list-row__title {
+  color: hsl(var(--primary-green-teal));
+}
+
+.list__row--visual {
+  background-color: hsla(var(--primary-cobalt-blue), 0.1);
+}
+
+.list__row--visual .list-row__title {
+  color: hsl(var(--primary-cobalt-blue));
+}
+
+.list__button {
+  border: 0;
+
+  background-color: var(--neutral-dark-gray-blue);
+  color: var(--neutral-white);
+  padding: 1rem;
+  border-radius: 1.5rem;
+
+  font-size: .8rem;
+  font-weight: var(--font-weight-bold);
 }

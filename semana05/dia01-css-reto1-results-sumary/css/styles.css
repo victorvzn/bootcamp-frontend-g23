@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Responsive Design
+
+576px  -> pantallas pequeñas (celulares)
+768px  -> pantallas pequeñas (tablets y celulares)
+992px  -> pantallas medianas (Desktop)
+1200px -> pantallas grandes (Desktops, TVs)
+*/
+
 /* CUSTOM PROPERTIES / VARIABLES */
 
 :root {
@@ -60,8 +68,21 @@ body {
   background-color: var(--neutral-white);
 
   display: flex;
+  flex-direction: column;
 
   border-radius: 1rem;
+}
+
+/* @media (min-width: 768px) {
+  .summary {
+    flex-direction: row;
+  }
+} */
+
+@media (width >= 768px) {
+  .summary {
+    flex-direction: row;
+  }
 }
 
 .result {
@@ -216,4 +237,14 @@ body {
 
   font-size: .8rem;
   font-weight: var(--font-weight-bold);
+
+  transition: background .3s ease;
+}
+
+.list__button:hover {
+  background: linear-gradient(
+    180deg,
+    var(--gradients-light-slate-blue-background) 0%,
+    var(--gradients-light-royal-blue-background) 100%
+  );
 }

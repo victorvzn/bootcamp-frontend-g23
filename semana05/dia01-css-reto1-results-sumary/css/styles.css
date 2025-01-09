@@ -1,3 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* CUSTOM PROPERTIES / VARIABLES */
+
+:root {
+  /* FONTS */
+
+  --font-family: "Hanken Grotesk", serif;
+  --font-size: 18px;
+  --font-weight-medium: 400;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+
+  /* COLORS */
+
+  --primary-light-red: hsl(0, 100%, 67%);
+  --primary-orangey-yellow: hsl(39, 100%, 56%);
+  --primary-green-teal: hsl(166, 100%, 37%);
+  --primary-cobalt-blue: hsl(234, 85%, 45%);
+
+  --gradients-light-slate-blue-background: hsl(252, 100%, 67%);
+  --gradients-light-royal-blue-background: hsl(241, 81%, 54%);
+
+  --gradients-violet-blue-circle: hsla(256, 72%, 46%, 1);
+  --gradients-persian-blue-circle: hsla(241, 72%, 46%, 0);
+
+  --neutral-white: hsl(0, 0%, 100%);
+  --neutral-pale-blue: hsl(221, 100%, 96%);
+  --neutral-light-lavender: hsl(241, 100%, 89%);
+  --neutral-dark-gray-blue: hsl(224, 30%, 27%);
+}
+
 body {
-  background-color: aquamarine;
+  background-color: var(--neutral-pale-blue);
 }

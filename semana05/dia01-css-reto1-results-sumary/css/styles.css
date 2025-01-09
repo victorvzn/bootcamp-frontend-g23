@@ -69,7 +69,11 @@ body {
 
   padding: 1.5rem;
   border-radius: 1rem;
-  background-color: brown;
+  background: linear-gradient(
+    180deg,
+    var(--gradients-light-slate-blue-background) 0%,
+    var(--gradients-light-royal-blue-background) 100%
+  );
 
   display: flex;
   flex-direction: column;
@@ -77,3 +81,20 @@ body {
   align-items: center;
   gap: 1.5rem;
 }
+
+.result__subtitle {
+  color: var(--neutral-light-lavender);
+}
+
+.result__title {
+  font-size: 1.8rem;
+  color: var(--neutral-white);
+}
+
+.result__text {
+ font-size: 1rem;
+ font-weight: var(--font-weight-medium);
+ color: var(--neutral-light-lavender);
+ text-align: center;
+}
+

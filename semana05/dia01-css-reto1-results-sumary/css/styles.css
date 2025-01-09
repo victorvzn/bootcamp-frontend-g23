@@ -98,3 +98,30 @@ body {
  text-align: center;
 }
 
+.result__stats {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+
+  background: linear-gradient(
+    180deg,
+    var(--gradients-violet-blue-circle) 0%,
+    var(--gradients-persian-blue-circle) 100%
+  );
+
+  display: grid;
+  place-content: center;
+}
+
+.result__stats h1 {
+  font-size: 3.5rem;
+  font-weight: var(--font-weight-extra-bold);
+  color: var(--neutral-white);
+}
+
+.result__stats small {
+  font-size: .9rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--neutral-light-lavender);
+  text-align: center;
+}

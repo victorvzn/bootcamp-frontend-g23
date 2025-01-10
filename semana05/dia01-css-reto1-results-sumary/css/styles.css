@@ -93,7 +93,7 @@ body {
   /* border: 1px solid red; */
 
   padding: 1.5rem;
-  border-radius: 1rem;
+  border-radius: 0 0 1rem 1rem;
   background: linear-gradient(
     180deg,
     var(--gradients-light-slate-blue-background) 0%,
@@ -105,6 +105,12 @@ body {
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
+}
+
+@media (width >= 768px) {
+  .result {
+    border-radius: 1rem;
+  }
 }
 
 .result__subtitle {

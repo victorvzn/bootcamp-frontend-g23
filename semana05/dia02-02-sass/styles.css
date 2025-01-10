@@ -8,6 +8,8 @@ body {
   background-color: #e8e8e8;
   border: 3px solid #454545;
   border-radius: 8px;
+  border: 5px solid blue;
+  border: 8px dashed orangered;
   text-align: left;
   color: #333333;
 }

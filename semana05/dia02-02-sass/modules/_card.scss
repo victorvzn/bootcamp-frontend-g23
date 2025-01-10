@@ -1,0 +1,29 @@
+.card {
+  background-color: $card-bg;
+  border: 3px solid $card-border-color;
+  border-radius: $card-border-radius;
+
+  @include default-border;
+  @include custom-border(8px, orangered, false);
+
+  text-align: left;
+  color: $card-text;
+
+  &__header {
+    padding: 1rem 1.5rem;
+    border-bottom: 3px solid $card-border-color;
+  }
+  
+  &__title {
+    font-weight: 600;
+  }
+
+  &__body {
+    padding: 1rem 1.5rem;
+    min-height: 80px;
+  }
+
+  &--success {
+    background-color: #DDEEAA;
+  }
+}

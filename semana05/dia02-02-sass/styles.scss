@@ -1,55 +1,6 @@
-$primary-color: #FFA559;
+@import 'modules/variables';
+@import 'modules/mixins';
 
-$card-bg: #e8e8e8;
-$card-text: #333333;
-$card-border-color: #454545;
-$card-border-radius: 8px;
+@import 'modules/general';
 
-@mixin default-border {
-  border: 5px solid blue;
-}
-
-@mixin custom-border($width, $color, $is-solid: true) {
-  @if $is-solid {
-    border: $width solid $color;
-  } @else {
-    border: $width dashed $color;
-  }
-}
-
-body {
-  background-color: $primary-color;
-  color: blue;
-  text-align: center;
-}
-
-.card {
-  background-color: $card-bg;
-  border: 3px solid $card-border-color;
-  border-radius: $card-border-radius;
-
-  @include default-border;
-  @include custom-border(8px, orangered, false);
-
-  text-align: left;
-  color: $card-text;
-
-  &__header {
-    padding: 1rem 1.5rem;
-    border-bottom: 3px solid $card-border-color;
-  }
-  
-  &__title {
-    font-weight: 600;
-  }
-
-  &__body {
-    padding: 1rem 1.5rem;
-    min-height: 80px;
-  }
-
-  &--success {
-    background-color: #DDEEAA;
-  }
-}
-
+@import 'modules/card';

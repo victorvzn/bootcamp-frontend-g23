@@ -1,3 +1,40 @@
+$primary-color: #FFA559;
+
+$card-bg: #e8e8e8;
+$card-text: #333333;
+$card-border-color: #454545;
+$card-border-radius: 8px;
+
 body {
-  background-color: orange;
+  background-color: $primary-color;
+  color: blue;
+  text-align: center;
 }
+
+.card {
+  background-color: $card-bg;
+  border: 3px solid $card-border-color;
+  border-radius: $card-border-radius;
+
+  text-align: left;
+  color: $card-text;
+
+  &__header {
+    padding: 1rem 1.5rem;
+    border-bottom: 3px solid $card-border-color;
+  }
+  
+  &__title {
+    font-weight: 600;
+  }
+
+  &__body {
+    padding: 1rem 1.5rem;
+    min-height: 80px;
+  }
+
+  &--success {
+    background-color: #DDEEAA;
+  }
+}
+

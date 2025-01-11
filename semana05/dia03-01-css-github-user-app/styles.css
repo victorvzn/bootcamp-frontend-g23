@@ -49,8 +49,6 @@ body {
 /* PROFILE */
 
 .profile {
-  border: 1px solid red;
-
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -98,4 +96,65 @@ body {
   display: none;
 }
 
-/* SEARCH */
+/* PROFILE / SEARCH */
+
+.profile__search {
+  background-color: var(--dark-blue-2);
+  border-radius: .5rem;
+}
+
+.profile__form {
+  padding: .5rem .5rem .5rem 1.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+}
+
+.profile__label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.profile__icon-search {
+  stroke: var(--light-blue);
+}
+
+.profile__input-text {
+  border: none;
+  background-color: transparent;
+  color: var(--white);
+
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-regular);
+  font-size: .8rem;
+
+  height: 100%;
+  flex-grow: 1;
+}
+
+.profile__input-text::placeholder {
+  color: var(--white);
+}
+
+.profile__input-submit {
+  border: none;
+  background-color: var(--light-blue);
+  color: var(--white);
+
+  padding: .6rem;
+  min-width: 80px;
+  border-radius: .5rem;
+
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: .8rem;
+}
+
+/* PROFILE / INFO */
+
+.profile__info {
+  border: 1px solid red;
+}

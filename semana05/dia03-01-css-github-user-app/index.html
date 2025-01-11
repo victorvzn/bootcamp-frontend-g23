@@ -7,6 +7,30 @@
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  
+  <main class="profile wrapper">
+    <header class="profile__header">
+      <span class="profile__logo">devfinder</span>
+
+      <button class="profile__mode profile__mode--dark">
+        Light
+        <img class="mode-dark" src="./images/icon-sun.svg" />
+        <img class="mode-light" src="./images/icon-moon.svg" />
+      </button>
+    </header>
+
+    <search class="profile__search">
+      <form class="profile__form">
+        <label class="profile__label">
+          <img class="profile__icon-search" src="./images/icon-search.svg" />
+          <input class="profile__input-text" type="text" placeholder="Search github username..." autofocus />
+        </label>
+        <input class="profile__input-submit" type="submit" value="Search" />
+      </form>
+    </search>
+
+    <section class="profile__info">
+      
+    </section>
+  </main>
 </body>
 </html>

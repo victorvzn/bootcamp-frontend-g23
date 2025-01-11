@@ -1,5 +1,22 @@
 /* TODO: Terminar la maquetación propuesta del diseño usando CSS */
 
-body {
-  background-color: azure;
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+/* VARIABLES */
+
+:root {
+  /* FONTS */
+
+  --font-primary: 'Space Mono', monospace;;
+  --font-size: 16px;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* COLORS */
+
+  --dark-blue-1: #141c2f;
+  --dark-blue-2: #1f2a48;
+  --light-blue: #0079fe;
+  --white: #FFFFFF;
 }

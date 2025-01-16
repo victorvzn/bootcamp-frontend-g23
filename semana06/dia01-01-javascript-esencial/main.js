@@ -349,3 +349,23 @@ function imprimirUnNombre(nombre = 'Anónimo') {
 
 imprimirUnNombre()
 imprimirUnNombre('Victor')
+
+function imprimirNombreYApellido(nombre, apellido, edad) {
+  // console.log('Hola soy ' + nombre + ' ' + apellido + ' y tengo ' + edad + ' años.')
+  // Template strings
+  console.log(`Hola soy ${nombre} y ${apellido} y tengo ${edad} años`)
+}
+
+imprimirNombreYApellido()
+imprimirNombreYApellido('Victor')
+imprimirNombreYApellido('Victor', 'Villazón')
+imprimirNombreYApellido('Victor', 'Villazón', 38)
+
+// EJERCICIOS
+
+// 1. Usando funciones determinar si la edad de una persona es mayor de edad o menor de edad mostrando 'Mayor de edad' o 'Menor de edad'.
+// 2. Retornar true si un número es primo sino devolver false
+//    Pista: un número primo es divisible por sí mismo y por 1 (pueden usar un for, while o do-while)
+
+// FUNCIONES Sin retorno
+

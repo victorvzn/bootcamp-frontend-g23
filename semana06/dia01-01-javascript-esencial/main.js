@@ -24,11 +24,13 @@ console.log(20)
 console.log(15.69)
 console.log(0.999)
 console.log(-36)
+console.log(0b1010)
 
 console.log(typeof 20) // number
 console.log(typeof 15.69) // number
 console.log(typeof 0.999) // number
 console.log(typeof -36) // number
+console.log(typeof 0b1010) // number
 
 // STRING (Cadenas de texto)
 

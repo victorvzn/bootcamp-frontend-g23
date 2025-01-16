@@ -110,3 +110,159 @@ edad2 = true
 
 console.log(edad2)
 console.log(typeof edad2) // boolean
+
+// OPERADORES MATEMÁTICOS + - * / % **
+
+console.log(1 + 2 + 9)
+console.log(3 - 2)
+console.log(9 - 25)
+console.log(3 * 2)
+console.log(3 / 2)
+console.log(3 % 2) // Residuo
+console.log(3 ** 2) // Tres elevado al cuadrado
+console.log(Math.pow(2, 3)) // Dos elevado al cubo
+
+// OPERADOR DE ASIGNACION (=)
+
+const genero = 'femenino'
+
+console.log(genero)
+
+// OPERADORES DE COMPARACIÓN
+
+// Operador de igualdad y desigualdad NO ESTRICTA (==, !=)
+// Devuelve un valor booleano (true, false)
+// Este oprador no toma en cuenta el tipo de dato al comparar sino solo sus valores
+
+console.log(1 == 1)   // true
+console.log(1 == '1') // true ❓
+console.log(1 != '1') // false ❓
+
+// Operador de igualdad y desigualdad ESTRICTA (===, !==) (ES RECOMENDABLE USAR CASI SIEMPRE) ✅
+// Deveuelve un boolean (true o false)
+// Este oprador si toma en cuenta el tipo de datos y sus valores al comparar.
+
+console.log(1 === 1)   // true  ✅
+console.log(1 === '1') // false ✅
+console.log(1 !== '1') // true  ✅
+
+// OPERADOR DE COMPARACIÓN (Siempre devuelven un valor booleano)
+
+console.log(8 > 5) // true
+console.log(5 < 1) // false
+console.log(8 >= 5) // true
+console.log(5 <= 1) // false
+
+// OPERADORES LÓGICOS (AND, OR, NEGACIÓN)
+
+console.log(true && false) // AND -> false
+console.log(true || false) // OR -> true
+console.log(!true) // NEGACIÓN -> false
+
+// OPERADORES DE CADENA (CONCATENACIÓN) -> +
+
+const saludo = 'Hola, '
+const nombreCompleto = 'Victor' + ' ' + 'Villazón'
+const miEdad = 38
+
+const imprimirSaludo = saludo + nombreCompleto + ". Tengo " + miEdad + ' años'
+
+console.log(nombreCompleto)
+console.log(imprimirSaludo)
+
+// EJERCICIOS
+
+// 1. Retorna true si dos strings tienen la misma longitud sino devolver false
+
+const cadena1 = 'codigox'
+const cadena2 = 'cadaga'
+
+console.log(cadena1.length)
+console.log(cadena2.length)
+
+console.log(cadena1.length === cadena2.length) // false
+
+// 2. (TODO) Retornar true si un numero es menor que 40 sino devolver false
+// 3. (TODO) Retornar True si un numero es menor que 60 sino devolver False
+// 4. (TODO) Retornar True si un numero es par sino devolver False
+// 5. (TODO) Retornar True si un numero es impar sino devolver False
+// 6. (TODO) calcular el area de un triangulo y mostrar su resultado si tenemos los valores base y altura
+// 7. (TODO) Almacenar en una constante un número de 3 cifras y mostrar la suma de sus cifras elevada al cubo.
+// 8. (TODO) Almacenar en una constante un monto de dinero, luego mostrar cuanto le toca a cada socio según la siguiente tabla:
+// SOCIO A = 30%, SOCIO B = 20%, SOCIO C = 60%
+
+// CONDICIONALES (IF)
+
+if (true) {
+  // El bloque que se ejecuta si la condición es verdadera (true)
+}
+
+const numero = 33
+
+const esPar = numero % 2 === 0 // boolean
+
+if (esPar) {
+  console.log('Este número es par', numero)
+}
+
+// CONDICIONALES (IF, ELSE)
+
+if (true) {
+  // Se ejecuta este bloque si la condición es verdadera
+} else {
+  // Se ejecuta este bloque si la condición es falsa
+}
+
+ // true, 1, 'hola' 
+ // false, 0, ''
+
+if (esPar) {
+  console.log('Este número es par', numero)
+} else {
+  console.log('Este número es impar', numero)
+}
+
+// CONDICIONALES (IF, ELSE IF*, ELSE)
+
+if (false) {
+  // Se ejecuta este bloque si la condición es verdadera
+} else if (false) {
+  // Se ejecuta este bloque si la condición es verdadera
+} else if (false) {
+  // Se ejecuta este bloque si la condición es verdadera
+} else {
+  // Se ejecuta este bloque si ninguna condición se cumple
+}
+
+let heroe = 'Spiderman'
+
+if (heroe === 'Batman') {
+  console.log('Hola soy Bruce')
+} else if (heroe === 'Spiderman') {
+  console.log('Hola soy Peter')
+} else if (heroe === 'Ironman') {
+  console.log('Hola soy Tony')
+} else {
+  console.log('No soy un heroe 🤨')
+}
+
+// CONDICIONALES (SWITCH)
+
+heroe = 'Ironman'
+
+switch (heroe) {
+  case 'Batman':
+    console.log('Hola soy Bruce')
+    break
+  case 'Spiderman':
+    console.log('Hola soy Peter')
+    break
+  case 'Ironman':
+    console.log('Hola soy Tony')
+    break
+  default:
+    console.log('No soy un heroe 🤨')
+}
+
+// ESTRUCTURAS REPETITIVAS
+

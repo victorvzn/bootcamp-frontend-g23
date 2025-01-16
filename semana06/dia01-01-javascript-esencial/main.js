@@ -1,3 +1,5 @@
+// https://lenguajejs.com/javascript/
+
 // COMENTARIOS
 
 // console.log('Hola a todos!')
@@ -65,3 +67,44 @@ console.log(typeof apellido) // object === null
 
 
 // VARIABLES Y CONSTANTES
+
+// ES5 === ECMASCRIPT 5
+// ES6 === ECMASCRIPT 6
+
+// var -> ES5 (Formar de declarar una variable pero no es recomendado su uso, la declaración es a nivel de la función)
+
+var minombre = 'victor'
+// var minombre = 'xxxxx'
+
+// CONST -> ES6 (El uso de const es lo recomendado) ✅
+
+const edad = 55 // Es obligatorio inicializarlo
+const _edad = 25
+const edadDeMiHijoMayor = 15
+const PI = 3.1415
+const empresa = 'JS Company'
+const esMayorDeEdad = false
+// const mi variable = 'xyz' // Uncaught SyntaxError ❌
+// edad = 99 // Uncaught TypeError: Assignment to constant variable ❌
+
+console.log(edad)
+console.log(empresa)
+
+// LET -> ES6 (El uso de let es lo recomendado) ✅
+
+let edad2 = 38 // NO es necesario inicializarlo
+
+edad2 = 39 // Estamos reasignando un valor númerico/string/boolean/etc
+
+console.log(edad2)
+console.log(typeof edad2) // number
+
+edad2 = "Victor"
+
+console.log(edad2)
+console.log(typeof edad2) // string
+
+edad2 = true
+
+console.log(edad2)
+console.log(typeof edad2) // boolean

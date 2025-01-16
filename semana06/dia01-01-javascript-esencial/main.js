@@ -367,5 +367,56 @@ imprimirNombreYApellido('Victor', 'Villazón', 38)
 // 2. Retornar true si un número es primo sino devolver false
 //    Pista: un número primo es divisible por sí mismo y por 1 (pueden usar un for, while o do-while)
 
+
 // FUNCIONES Sin retorno
 
+function esMayorOMenorDeEdad(edad = 0) {
+  if (edad >= 18) {
+    console.log('Mayor de edad')
+  } else {
+    console.log('Menor de edad')
+  }
+}
+
+esMayorOMenorDeEdad()
+esMayorOMenorDeEdad(38)
+esMayorOMenorDeEdad(8)
+esMayorOMenorDeEdad(3)
+
+// FUNCIONES Con retorno
+
+function esMayorOMenorDeEdadConRetorno(edad) {
+  if (edad >= 18) {
+    return 'Mayor de edad'
+  } else {
+    return 'Menor de edad'
+  }
+}
+
+const resultado = esMayorOMenorDeEdadConRetorno(15)
+
+console.log('Resultado', resultado)
+
+// MÉTODOS DE CADENAS
+
+const welcome = ' Hola Javascript '
+
+console.log(welcome.length) // 17
+console.log(welcome.toUpperCase()) // HOLA JAVASCRIPT
+console.log(welcome.toLowerCase()) // hola javascript
+console.log(welcome.trim()) // Remueve los espacios en blanco al inicio y al final de la cadena
+console.log(welcome.trimStart()) // Remueve los espacios en blanco al inicio de la cadena
+console.log(welcome.trimEnd()) // Remueve los espacios en blanco al final de la cadena
+
+const avatar = 'Hola @me'
+
+console.log(avatar.concat('victorvzn')) // Hola @mevictorvzn
+console.log(avatar.replace('@me', 'Victor')) // Hola Victor
+console.log(avatar.slice(0, 5)) // Retorna una parte de la cadena tomando la posición/índice de inicio y final en los parámetros
+console.log(welcome.indexOf('script')) // 10
+
+// EJERCICIOS
+
+// 1. Escribir una función que escriba al reves una cadena ingresada
+// 2. Escribir una función que valide si un texto ingresa es un palíndromo
+// 3. Escribir una función que cuente el número de vocales en una cadena ingresada. Ej: Hello world -> 3

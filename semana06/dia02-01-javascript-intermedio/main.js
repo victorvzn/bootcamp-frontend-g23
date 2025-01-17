@@ -271,3 +271,28 @@ miObjeto['juegos favoritos'] = ['Crash Team Racing', 'Mario', 'Minecraft']
 console.log(miObjeto)
 
 // DESTRUCTURING DE ARREGLOS Y OBJETOS
+
+// Una forma de extraer los elementos/propiedades de un objeto o un arreglo en nuevas variables/constantes.
+
+// DESTRUCTURING EN OBJETOS
+
+const nombreValue = miObjeto.nombre
+const apellidoValue = miObjeto.apellido
+const colorFavoritoValue = miObjeto.colorFavorito
+
+console.log(nombreValue, apellidoValue, colorFavoritoValue)
+
+const { nombre, apellido, colorFavorito } = miObjeto
+
+console.log(nombre, apellido, colorFavorito)
+
+const {
+  nombre: nombreConAlias,
+  apellido: apellidoConAlias,
+  colorFavorito: colorFavoritoConAlias
+} = miObjeto
+
+console.log(nombreConAlias, apellidoConAlias, colorFavoritoConAlias)
+
+// DESTRUCTURING EN ARRAYS
+

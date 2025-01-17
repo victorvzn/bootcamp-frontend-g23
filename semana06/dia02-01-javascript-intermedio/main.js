@@ -296,3 +296,58 @@ console.log(nombreConAlias, apellidoConAlias, colorFavoritoConAlias)
 
 // DESTRUCTURING EN ARRAYS
 
+const amigos = ['leo', 'cesar', 'carlos', 'diego', 'victor']
+
+const amigoLeo = amigos[0]
+const amigoCesar = amigos[1]
+const amigoVictor = amigos[4]
+
+const [ amigo1, amigo2, amigo3, amigo4, amigo5 ] = amigos
+
+console.log(amigo1, amigo2, amigo3, amigo4, amigo5)
+
+const [a1, a2, ...mejoresAmigos] = amigos
+
+console.log(a1, a2, mejoresAmigos)
+
+// SPREAD OPERATOR (operator ...)
+
+// Extraer las propiedeades de un objeto/arreglo para reutilizarlo en otros objetos/arreglos
+
+const producto = {
+  nombre: 'Laptop',
+  precio: 4800,
+  categoria: 'tech'
+}
+
+const cliente = {
+  nombre: 'Alessandro',
+  isVip: true
+}
+
+console.log(producto + cliente) // ❌ [object Object][object Object]
+
+const nuevoObjetoConColisiones = { ...producto, ...cliente } // ⛔ Cuidado con la extracción de propiedades
+
+console.log(nuevoObjetoConColisiones)
+
+// SPREAD OPERATOR, para evitar colisiones en las propiedades
+
+const nuevoObjetoSinColisiones = {
+  producto: { ...producto },
+  cliente: { ...cliente }
+}
+
+console.log(nuevoObjetoSinColisiones)
+console.log(nuevoObjetoSinColisiones.producto.nombre) // Laptop
+console.log(nuevoObjetoSinColisiones.cliente.nombre) // Alessandro
+
+// OTROS MÉTODOS DE OBJETOS
+
+// Obtenemos solo las claves (keys) del objeto dentro de un arreglo de cadenas
+console.log(Object.keys(producto)) 
+// Obtenemos solo los valores (values) del objeto dentro de un arreglo de cadenas
+console.log(Object.values(producto))
+// Convierte un objeto a un arreglo
+console.log(Object.entries(producto))
+

@@ -93,5 +93,37 @@ console.log(listaDeNombres2.at(-2))
 
 // TODO: Investigar otras funciones de arrays como slice
 
+
 // MÉTODOS DE ARREGLOS
+
+// ESENCIALES: INCLUDES, FILTER, MAP, SORT, FOREACH, REDUCE
+
+// MÉTODO INCLUDES, nos indica si el valor que se pasa como parámetro se encuentra en el arreglo y siempre devuelve un boolean (true o false)
+
+const languages = ['javascript', 'php', 'python', 'C', 'c++', 'java', 'python']
+
+console.log(languages.includes('java'))  // true
+console.log(languages.includes('cobol')) // false
+
+// MÉTODO FILTER, nos ayudar a ubicar un elemento dentro de un arreglo usando una condición y devuelve un arreglo nuevo con los elementos que cumplieron la condición.
+
+console.log(languages)
+
+const resultado = languages.filter(function (item) {
+  // return item === 'java'
+  // return item === 'python'
+  return item.toLowerCase().includes('c')
+})
+
+console.log(resultado)
+
+// MÉTODO MAP, evalua un arreglo, lo modifica. Hay que pasarle una función.
+
+const nombresConTitulo = languages.map(function (language) {
+  // return 'hola'
+  // return language
+  return '*' + language + '*'
+})
+
+console.log(nombresConTitulo)
 

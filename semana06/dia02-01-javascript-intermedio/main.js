@@ -57,3 +57,41 @@ listaDeNombres2.pop()
 
 console.log(listaDeNombres2) // Después
 
+// Insertar un elemento en una posición determinada
+
+listaDeNombres2.splice(0, 0, 'Código')
+listaDeNombres2.splice(3, 0, 'Tecsup')
+
+console.log(listaDeNombres2) // Después
+
+// Eliminar un elemento en una posición determinada
+
+listaDeNombres2.splice(3, 1)
+
+console.log(listaDeNombres2) // Después
+
+// Eliminar e insertar un elemneto en una posición determinada
+
+listaDeNombres2.splice(5, 1, 'HOLA')
+
+console.log(listaDeNombres2) // Después
+
+// Obtener el tamaño de nuestro arreglo
+
+console.log(listaDeNombres2.length) // 6
+console.log('bienvenido'.length) // 10
+
+// Obtener el último elemento de un arreglo
+
+console.log(listaDeNombres2[5])
+console.log(listaDeNombres2[listaDeNombres2.length - 1])
+console.log(listaDeNombres2.at(0))
+console.log(listaDeNombres2.at(-1)) // Devuelve el último elemento del arreglo más fácilemente
+console.log(listaDeNombres2.at(-2))
+
+// DOC: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+
+// TODO: Investigar otras funciones de arrays como slice
+
+// MÉTODOS DE ARREGLOS
+

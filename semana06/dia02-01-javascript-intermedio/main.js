@@ -351,3 +351,33 @@ console.log(Object.values(producto))
 // Convierte un objeto a un arreglo
 console.log(Object.entries(producto))
 
+// EJEMPLO FINAL CON OBJETOS
+
+const hero = 'Victor'
+
+if (hero === 'Batman') {
+  console.log('Hola soy Bruce')
+} else if (hero === 'Spiderman') {
+  console.log('Hola soy Peter')
+} else if (hero === 'Ironman') {
+  console.log('Hola soy Tony')
+} else {
+  console.log('No soy un heroe 😉')
+}
+
+const SUPER_HEROS = {
+  'Batman': 'Hola soy Bruce',
+  'Spiderman': 'Hola soy Peter',
+  'Ironman': 'Hola soy Tony',
+}
+
+if (!SUPER_HEROS[hero]) {
+  console.log('No soy un heroe 😉')
+} else {
+  console.log(SUPER_HEROS[hero])
+}
+
+console.log(SUPER_HEROS[hero] ?? 'No soy un heroe 😉')
+
+// TODO: Resolver tres retos del siguiente link para mañana y comparten su solución en el chat
+// https://adventjs.dev/es

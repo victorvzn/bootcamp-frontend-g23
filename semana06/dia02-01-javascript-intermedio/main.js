@@ -127,3 +127,62 @@ const nombresConTitulo = languages.map(function (language) {
 
 console.log(nombresConTitulo)
 
+// MÉTODO SORT, nos ayuda a ordenar un arreglo de elementos. MUTA el arreglo original.
+
+console.log(languages)
+
+// const ordernandoLanguages = languages.sort() // Mutando el arreglo original
+const ordernandoLanguages = [...languages].sort() // No muta el arreglo original
+
+console.log(ordernandoLanguages)
+console.log(languages)
+
+// Ordenar números tanto ascendentemente como descendentemente
+
+const edades = [35, 99, 16, 5, 29, 66, 1]
+
+console.log(edades)
+
+console.log([...edades].sort())
+
+console.log([...edades].sort(function(a, b) {
+  return a - b // Ordenando asc
+}))
+
+console.log([...edades].sort(function(a, b) {
+  return b - a // Ordenando desc
+}))
+
+// MÉTODO FOREACH, nos ayuda a recorrer un arreglo sin tener ningún retorno de datos.
+
+const miArreglo = []
+
+languages.forEach(function(language) {
+  // console.log(language)
+  miArreglo.push('El mejor: ' + language)
+})
+
+console.log(miArreglo)
+
+// MÉTODO REDUCE, nos ayuda a acumular los valores de un arreglo.
+
+const numbers = [3, 40, 100, 7, 50]
+
+// Con un FOR
+
+let sum = 0 // Acumulador
+
+for(let i = 0; i < numbers.length; i++) {
+  sum = sum + numbers[i]
+}
+
+console.log(sum)
+
+// Con Reduce
+
+const sumatoria = numbers.reduce(function(acumulador, valorActual) {
+  return acumulador + valorActual
+}, 0)
+
+console.log(sumatoria)
+

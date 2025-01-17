@@ -186,3 +186,48 @@ const sumatoria = numbers.reduce(function(acumulador, valorActual) {
 
 console.log(sumatoria)
 
+
+// OBJETOS
+
+/*
+  {
+    KEY1: VALUE1,
+    KEY2: VALUE2,
+    KEY3: VALUE3,
+    ...
+  }
+
+  VALUE: number, string, boolean, array, object, undefined, null, etc.
+*/
+
+const miObjetoVacio = {}
+
+const miObjeto = {
+  nombre: 'Victor',
+  apellido: 'Villazón',
+  colorFavorito: 'azúl',
+  'mi edad': 38,
+  coloresFavoritos: ['rosado', 'rojo', 'azúl'],
+  cursos: [
+    {
+      id: 1,
+      nombre: 'Matemática',
+      nota: 13
+    },
+    {
+      id: 2,
+      nombre: 'Algoritmos',
+      nota: 20
+    }
+  ],
+  devolverCursosAprobados: function() { // función anónima
+    return this.cursos.filter(function(curso) {
+      return curso.nota > 13
+    })
+  }
+}
+
+console.log(miObjetoVacio)
+console.log(miObjeto)
+
+// LEER LOS CAPOS DE UN OBJETO (Notación de punto y de corchete)

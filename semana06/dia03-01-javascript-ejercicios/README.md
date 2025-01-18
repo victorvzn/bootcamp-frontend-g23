@@ -132,7 +132,6 @@ console.log(manufacture(gifts3, materials3)) // []
 
 ### [Reto 01 (2024) Primer regalo repetido](https://adventjs.dev/es/challenges/2024/1)
 
-
 ```js
 /*
   Tenemos una lista de número mágicos que representan regalos, y algunos estan repetido. Además, los regalos deben ser ordenados en orden ascendente antes de entregárselos.

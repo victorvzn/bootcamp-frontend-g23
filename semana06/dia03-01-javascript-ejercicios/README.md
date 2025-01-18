@@ -179,11 +179,30 @@ console.log(preparedGifts3) // []
 */
 
 function createFrame(names) {
-  // Code here
-  return '*'
+  const namesLength = names.map(function(name){
+    return name.length
+  })
+  const [maxNameLength] = namesLength.sort(function(a,b) {
+    return b - a
+  })
+
+  let output = ''
+
+  const cover = '*'.repeat(maxNameLength + 4)
+  const newNames = names.map(function(name)  {
+    return '* ' + name.padEnd(maxNameLength, ' ') + ' *'
+  })
+
+  output += cover + '\n'
+  newNames.forEach(function(line) {
+    output += line + '\n'
+  })
+  output += cover
+  
+  return output
 }
 
-createFrame(['midu', 'madeval', 'educalvolpz'])
+console.log(createFrame(['midu', 'madeval', 'educalvolpz']))
 
 // Resultado esperado:
 // ***************
@@ -209,4 +228,81 @@ console.log(createFrame(['a', 'bb', 'ccc']))
 // *******
 
 console.log(createFrame(['a', 'bb', 'ccc', 'dddd']))
+```
+
+### [Reto3 (2023) - El duende travieso](https://2023.adventjs.dev/es/challenges/2023/3)
+
+```js
+/*
+En el taller de Papá Noel, un elfo travieso ha estado jugando con la línea de producción de regalos, añadiendo o quitando un paso no planificado.
+
+Tiene la secuencia original de pasos de fabricación originales y la secuencia modificada que puede incluir un paso adicional o faltarle un paso.
+
+Su tarea consiste en escribir una función que identifique y devuelva el primer paso adicional que se agregó o eliminó en la cadena de fabricación . Si no hay diferencia entre las secuencias, devuelva una cadena vacía.
+*/
+
+function findNaughtyStep(original, modified) {
+  
+  return '';
+}
+
+const original1 = 'abcd'
+const modified1 = 'abcde'
+console.log(findNaughtyStep(original1, modified1)) // 'e'
+
+const original2 = 'stepfor'
+const modified2 = 'stepor'
+console.log(findNaughtyStep(original2, modified2)) // 'f'
+
+const original3 = 'abcde'
+const modified3 = 'abcde'
+console.log(findNaughtyStep(original3, modified3)) // ''
+
+/*
+Por favor, tenga en cuenta:
+
+* Siempre habrá un paso diferente o ninguno.
+* La modificación puede ocurrir en cualquier parte de la cadena.
+* Los pasos originales podrían estar vacíos
+*/
+```
+
+
+### [Reto03 (2021) - El Grinch quiere fastidiar la Navidad](https://2021.adventjs.dev/challenges/03)
+
+```js
+/*
+El Grinch está abriendo las cartas que iban a Santa Claus y las está dejando hechas un lío. 😱
+
+Las cartas son una cadena de texto que incluyen regalos y paréntesis ().
+
+Para saber si una carta es válida ✅, debes comprobar que los paréntesis cierran correctamente y que, además, no vayan vacíos.
+
+¡Pero ojo! Porque el Grinch ha dejado llaves { y corchetes [ dentro de los paréntesis que hacen que no sean válidas. Por suerte sólo los ha dejado en medio de los paréntesis...
+
+Ejemplos:
+
+
+"bici coche (balón) bici coche peluche" // -> ✅
+"(muñeca) consola bici" // ✅
+
+"bici coche (balón bici coche" // -> ❌
+"peluche (bici [coche) bici coche balón" // -> ❌
+"(peluche {) bici" // -> ❌
+"() bici" // ❌
+
+Crea una función que pasándole el texto de la carta, devuelva true si es válida y false si no lo es. ¡Y acaba con la travesura del Grinch!
+*/
+
+function isValid(letter) {
+  return true
+}
+
+console.log(isValid("bici coche (balón) bici coche peluche")) // -> ✅
+console.log(isValid("(muñeca) consola bici")) // ✅
+
+console.log(isValid("bici coche (balón bici coche")) // -> ❌
+console.log(isValid("peluche (bici [coche) bici coche balón")) // -> ❌
+console.log(isValid("(peluche {) bici")) // -> ❌
+console.log(isValid("() bici")) // ❌
 ```

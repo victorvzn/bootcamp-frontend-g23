@@ -17,8 +17,15 @@ const ovejas = [
 ]
 
 function contarOvejas(ovejas) {
-  // aquí tu magia
-  return ovejas
+  return ovejas.filter(function(oveja) {
+    const nombreEnMinusculas = oveja.name.toLowerCase()
+    
+    const esColorRojo = oveja.color === 'rojo'
+    const tieneLaLetraN = nombreEnMinusculas.includes('n')
+    const tieneLaLetraA = nombreEnMinusculas.includes('a')
+    
+    return esColorRojo && tieneLaLetraN && tieneLaLetraA
+  })
 }
 
 const ovejasFiltradas = contarOvejas(ovejas)

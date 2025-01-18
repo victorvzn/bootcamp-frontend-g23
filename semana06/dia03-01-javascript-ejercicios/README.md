@@ -102,8 +102,13 @@ console.log([1, 2, 3, 4, 5].some(function (numero) {
 }))
 
 function manufacture(gifts, materials) {
-  // Code here
-  return []
+  return gifts.filter(function(gift) {
+    const copyGift = [...gift]
+
+    return copyGift.every(function(giftLetter) {
+      return materials.includes(giftLetter)
+    })
+  })
 }
 
 const gifts1 = ['tren', 'oso', 'pelota']
@@ -117,10 +122,10 @@ manufacture(gifts1, materials1) // ["tren", "oso"]
 const gifts2 = ['juego', 'puzzle']
 const materials2 = 'jlepuz'
 
-manufacture(gifts2, materials2) // ["puzzle"]
+console.log(manufacture(gifts2, materials2)) // ["puzzle"]
 
 const gifts3 = ['libro', 'ps5']
 const materials3 = 'psli'
 
-manufacture(gifts3, materials3) // []
+console.log(manufacture(gifts3, materials3)) // []
 ```

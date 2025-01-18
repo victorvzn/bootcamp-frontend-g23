@@ -81,3 +81,46 @@ console.log(getCoins(5)); // [0, 0, 1, 0, 0, 0] -> una moneda de 5 céntimos
 console.log(getCoins(16)); // [1, 0, 1, 1, 0, 0] -> una moneda de 1 céntimo, una de 5 y una de 10
 console.log(getCoins(100)); // [0, 0, 0, 0, 0, 2] -> dos monedas de 50 céntimos
 ```
+
+### [Reto2 (2023) - Ponemos en marcha la fábrica](https://2023.adventjs.dev/es/challenges/2023/2)
+
+```js
+/*
+En el taller de Papá Noel, los elfos tienen una lista de regalos que desean hacer y un conjunto limitado de materiales.
+
+Los regalos son cadenas de texto y los materiales son caracteres . Tu tarea es escribir una función que, dada una lista de regalos y los materiales disponibles, devuelva una lista de los regalos que se pueden hacer .
+*/
+
+// Método EVERY, devuelve un boolean si todos los elementos del array cumple una condición.
+
+console.log([1, 2, 3, 4, 5].every(function (numero) {
+  return numero > 3
+}))
+
+console.log([1, 2, 3, 4, 5].some(function (numero) {
+  return numero % 2 === 0
+}))
+
+function manufacture(gifts, materials) {
+  // Code here
+  return []
+}
+
+const gifts1 = ['tren', 'oso', 'pelota']
+const materials1 = 'tronesa'
+
+manufacture(gifts1, materials1) // ["tren", "oso"]
+// 'tren' SÍ porque sus letras están en 'tronesa'
+// 'oso' SÍ porque sus letras están en 'tronesa'
+// 'pelota' NO porque sus letras NO están en 'tronesa'
+
+const gifts2 = ['juego', 'puzzle']
+const materials2 = 'jlepuz'
+
+manufacture(gifts2, materials2) // ["puzzle"]
+
+const gifts3 = ['libro', 'ps5']
+const materials3 = 'psli'
+
+manufacture(gifts3, materials3) // []
+```

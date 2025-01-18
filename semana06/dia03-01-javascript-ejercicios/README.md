@@ -42,9 +42,7 @@ console.log(ovejasFiltradas)
 
 ```js
 /*
-Para mejorar la productividad de la tienda en la que trabajamos, vamos a crear una pequeña máquina que 
-"calcula el mínimo número de monedas que debemos usar para dar el cambio de una compra"
-en metálico.
+Para mejorar la productividad de la tienda en la que trabajamos, vamos a crear una pequeña máquina que "calcula el mínimo número de monedas que debemos usar para dar el cambio de una compra" en metálico.
 
 Las monedas para cambio que puedes usar son estas:
 
@@ -59,8 +57,22 @@ Tenemos que crear una función que recibe el número de céntimos que hay que de
 */
 
 function getCoins(change) {
-  // ¡No olvides compartir tu solución en redes!
-  return {}
+  const coins = [1, 2, 5, 10, 20, 50]
+
+  let acumulador = change // 51
+
+  return coins
+    .reverse() // [50, 20, 10, 5, 2, 1]
+    .map(function (coin) {
+      let quotient = Math.floor(acumulador / coin) // 51 / 50 = 1.02
+
+      if(quotient > 0) {
+        acumulador = acumulador % coin // aquí solo acumulamos el rediduo
+      }
+
+      return quotient
+    })
+    .reverse()
 }
 
 console.log(getCoins(51)); // [1, 0, 0, 0, 0, 1] -> una moneda de 1 céntimo y otra de 50 céntimos

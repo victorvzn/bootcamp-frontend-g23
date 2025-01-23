@@ -4,9 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reto IMC (Indice de Masa Corporal)</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
 <body>
-  
+  <main class="w-80 mx-auto border rounded-lg overflow-hidden">
+    <h1 class="text-xl font-semibold text-center mb-4 p-4 bg-slate-200">Indice de Masa Corporal</h1>
+
+    <section class="flex flex-col gap-4 px-4">
+      <label class="flex flex-col gap-2">
+        Peso (KG)
+        <input class="border px-3 py-2 rounded-lg w-full" type="number" placeholder="Ej. 50" value="0" />
+      </label>
+      <label>
+        ALtura (CM)
+        <input class="border px-3 py-2 rounded-lg w-full" type="number" placeholder="Ej. 170" value="0" />
+      </label>
+
+      <button class="bg-green-600 text-white p-2 rounded-lg">Calcular</button>
+    </section>
+
+    <section class="mt-5 bg-yellow-400 text-yellow-900 rounded-lg p-3 mx-4 mb-4">
+      Tu indice de Masa Corporal es ...
+    </section>
+  </main>
+
   <script src="./main.js"></script>
 </body>
 </html>

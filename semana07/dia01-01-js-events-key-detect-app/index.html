@@ -12,13 +12,25 @@
 <body class="bg-emerald-200 h-screen flex items-center justify-center">
   <main class="w-80 bg-yellow-300 p-4 rounded-lg flex flex-col items-center gap-4">
     <h1 class="text-2xl font-bold hola">JS Key Detect</h1>
-    <section class="bg-red-400 w-16 h-16 rounded-full flex justify-center items-center text-4xl font-bold text-white">00</section>
-    <section class="bg-red-300 w-32 h-16 rounded-lg flex justify-center items-center text-4xl font-bold text-white">-</section>
+    <section id="keyCode" class="bg-red-400 w-44 h-16 rounded-lg flex justify-center items-center text-4xl font-bold text-white">00</section>
+    <section id="character" class="bg-red-300 w-44 h-16 rounded-lg flex justify-center items-center text-4xl font-bold text-white">-</section>
     <p class="text-slate-800 font-semibold">Press any key</p>
   </main>
 
   <script>
-    
+    const sectionKeyCode = document.querySelector('#keyCode')
+    const sectionCharacter = document.querySelector('#character')
+
+    console.log({ sectionKeyCode, sectionCharacter })
+
+    document.addEventListener('keydown', function(event) {
+      // console.log('presionando tecla...', event)
+      console.log(event.key) // Tecla presionada
+      console.log(event.keyCode) // Codigo ASCII de la tecla presionada
+
+      sectionKeyCode.textContent = event.key
+      sectionCharacter.textContent = event.keyCode
+    })
 
     /*
     // DOM - Document Object Model

@@ -7,7 +7,40 @@
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
 <body>
-  <h1>Calculadora</h1>
+  <main class="bg-orange-100 w-80 mx-auto text-center mt-5 p-5 rounded-lg">
+    <h1 class="text-3xl font-bold mb-4">Calculadora</h1>
+
+    <section class="flex flex-col gap-4">
+      <input
+        class="border px-2 py-2 text-right text-xl font-bold bg-white"
+        type="text"
+        value="0"
+        readonly
+      />
+
+      <div class="grid grid-cols-3 gap-2">
+        <button class="bg-red-300 p-2 hover:bg-red-400 duration-300 font-bold">+</button>
+        <button class="bg-red-300 p-2 hover:bg-red-400 duration-300 font-bold">-</button>
+        <button class="bg-red-300 p-2 hover:bg-red-400 duration-300 font-bold">*</button>
+
+        <button class="bg-blue-300 p-2 hover:bg-blue-400 duration-300 font-bold">7</button>
+        <button class="bg-blue-300 p-2 hover:bg-blue-400 duration-300 font-bold">8</button>
+        <button class="bg-blue-300 p-2 hover:bg-blue-400 duration-300 font-bold">9</button>
+
+        <button class="bg-blue-300 p-2 hover:bg-blue-400 duration-300 font-bold">4</button>
+        <button class="bg-blue-300 p-2 hover:bg-blue-400 duration-300 font-bold">5</button>
+        <button class="bg-blue-300 p-2 hover:bg-blue-400 duration-300 font-bold">6</button>
+
+        <button class="bg-blue-300 p-2 hover:bg-blue-400 duration-300 font-bold">1</button>
+        <button class="bg-blue-300 p-2 hover:bg-blue-400 duration-300 font-bold">2</button>
+        <button class="bg-blue-300 p-2 hover:bg-blue-400 duration-300 font-bold">3</button>
+
+        <button class="bg-blue-300 p-2 hover:bg-blue-400 duration-300 font-bold">0</button>
+        <button class="bg-green-300 p-2 hover:bg-green-400 duration-300 font-bold">CE</button>
+        <button class="bg-green-300 p-2 hover:bg-green-400 duration-300 font-bold">=</button>
+      </div>
+    </section>
+  </main>
 
   <script src="./main.js"></script>
 </body>

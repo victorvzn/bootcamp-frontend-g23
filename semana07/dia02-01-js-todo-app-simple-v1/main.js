@@ -5,15 +5,33 @@ const taskList = document.querySelector('.task__list')
 taskAdd.addEventListener('click', function(event) {
   // Se ejecutará cuando hagamos click en el botón "Añadir tarea"
 
+  if (taskInput.value.trim() === '') {
+    alert('El campo es requido, ingresa un tarea nueva.')
+
+    return
+  }
+
   console.log('añadiendo tarea...', taskInput.value)
 
   const elementLi = document.createElement('li')
 
-  elementLi.textContent = taskInput.value
+  const elementCheckbox = document.createElement('input')
+  elementCheckbox.setAttribute('type', 'checkbox')
+  elementLi.appendChild(elementCheckbox)
 
-  // TODO: Añadir un botón al li con el texto 'Borrar'
+  const span = document.createElement('span')
+  span.textContent = taskInput.value
+  elementLi.appendChild(span)
+
+  // DONE: Añadir un botón al li con el texto 'Borrar'
+
+  const elementButton = document.createElement('button')
+  elementButton.textContent = 'Borrar'
+  elementLi.appendChild(elementButton)
 
   taskList.appendChild(elementLi)
+
+  taskInput.value = ''
 
   // const button = document.createElement('button')
   // button.textContent = '¡Hola soy un botón!'

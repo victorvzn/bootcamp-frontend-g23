@@ -38,3 +38,12 @@ taskAdd.addEventListener('click', function(event) {
   // console.log(button)
   // document.body.appendChild(button)
 })
+
+taskList.addEventListener('click', function(event) {
+  console.log('clicked taskList')
+  console.log({ target: event.target })
+
+  if (event.target.tagName === 'BUTTON') {
+    event.target.parentElement.remove()
+  }
+})

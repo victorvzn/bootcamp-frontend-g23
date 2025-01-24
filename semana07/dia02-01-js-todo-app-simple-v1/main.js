@@ -46,4 +46,8 @@ taskList.addEventListener('click', function(event) {
   if (event.target.tagName === 'BUTTON') {
     event.target.parentElement.remove()
   }
+
+  if (event.target.tagName === 'INPUT') {
+    event.target.classList.toggle('seleccionado')
+  }
 })

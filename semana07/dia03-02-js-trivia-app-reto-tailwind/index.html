@@ -7,39 +7,41 @@
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
 <body>
-  <main class="w-96 mx-auto mt-10 border">
-    <h1 class="text-xl font-medium text-gray-800 mb-4">Trivia de Javascript</h1>
+  <main class="w-96 mx-auto mt-10">
+    <h1 class="text-xl font-medium text-gray-800 mb-4 text-center">Trivia de Javascript</h1>
 
-    <section>
+    <section class="flex flex-col px-4 py-6 border border-gray-300 rounded-lg shadow">
       <!-- Aqui van las preguntas -->
-       <p>1. ¿Pregunta?</p>
+      <p class="text-md font-medium text-gray-800 mb-4">
+        1. ¿Pregunta?
+      </p>
 
-      <div>
-        <button>Alternativa 1</button>
-        <button>Alternativa 2</button>
-        <button>Alternativa 3</button>
-        <button>Respuesta correcta</button>
-        <button>Respuesta incorrecta</button>
+      <div class="flex flex-col items-start mb-10 gap-2">
+        <button class="border border-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 w-full text-blue-700 text-left hover:bg-blue-800 hover:text-white cursor-pointer">Alternativa 1</button>
+        <button class="border border-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 w-full text-blue-700 text-left hover:bg-blue-800 hover:text-white cursor-pointer">Alternativa 2</button>
+        <button class="border border-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 w-full text-blue-700 text-left hover:bg-blue-800 hover:text-white cursor-pointer">Alternativa 3</button>
+        <button class="border border-red-500 font-medium rounded-lg text-sm px-5 py-2.5 w-full text-white text-left cursor-pointer bg-red-500">Respuesta incorrecta</button>
+        <button class="border border-green-500 font-medium rounded-lg text-sm px-5 py-2.5 w-full text-white text-left cursor-pointer bg-green-500">Respuesta correcta</button>
       </div>
 
-      <div>
-        <button>Anterior</button>
-        <button>Siguiente</button>
-        <button>Mostrar resultados</button>
+      <div class="flex justify-end gap-2">
+        <button class="text-gray-800 bg-white hover:bg-gray-100 border border-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 cursor-pointer">Anterior</button>
+        <button class="text-gray-800 bg-white hover:bg-gray-100 border border-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 cursor-pointer">Siguiente</button>
+        <button class="text-gray-800 bg-white hover:bg-gray-100 border border-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 cursor-pointer">Resultados</button>
       </div>
     </section>
 
-    <section>
-      <p>¡GANASTE! o ¡MEJOR SUERTE LA PRÓXIMA!</p>
+    <section class="flex flex-col px-4 py-6 text-center bg-green-600 rounded-lg shadow ">
+      <p class="text-3xl font-medium mb-4 text-white">¡GANASTE! o ¡MEJOR SUERTE LA PRÓXIMA!</p>
 
-      <p>Respondiste 2 de 3</p>
+      <p class="text-md font-medium text-white mb-4">Respondiste 2 de 3</p>
 
-      <p>Y este es tu puntaje: 55</p>
+      <p class="text-md font-medium text-white mb-4">Y este es tu puntaje: 55</p>
 
       <img src="https://placehold.co/300x100" />
 
-      <div>
-        <button>Empezar de nuevo</button>
+      <div class="flex justify-end mt-10">
+        <button class="text-gray-800 bg-white hover:bg-gray-100 border border-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 cursor-pointer">Empezar de nuevo</button>
       </div>
     </section>
   </main>

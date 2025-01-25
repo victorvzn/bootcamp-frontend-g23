@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de tareas - Completo</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body>
+  <main>
+    <section>
+      <h1>
+        Lista de tareas - Completo
+      </h1>
+
+      <label>
+        Ingresa una tarea
+        <input
+          type="text"
+          placeholder="Ej. Aprender Javascript"
+        />
+      </label>
+
+      <div>
+        <button>Limpiar tareas completadas</button>
+      </div>
+
+      <ul>
+        <li>
+          <input
+            type="checkbox"
+          />
+          <div>
+            title task
+          </div>
+          <button>
+            Borrar
+          </button>
+        </li>
+        <li>
+          No hay tareas registradas
+        </li>      </ul>
+    </section>
+  </main>
+
+  <script src="./main.js"></script>
+</body>
+</html>

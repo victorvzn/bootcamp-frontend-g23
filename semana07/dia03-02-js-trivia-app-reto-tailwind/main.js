@@ -55,7 +55,7 @@ function respondQuestion(event, questionSelectedIndex) {
       button.className = 'border border-red-500 font-medium rounded-lg text-sm px-5 py-2.5 w-full text-white text-left bg-red-500'
     }
 
-    button.setAttribute('disabled', 'disabled')
+    button.setAttribute('disabled', 'disabled2')
   })
 }
 
@@ -65,6 +65,45 @@ function nextQuestion(event) {
   currentQuestionIndex = currentQuestionIndex + 1
 
   renderQuestions()
+}
+
+function startAgain(event) {
+  currentQuestionIndex = 0
+  correctAnswerCounter = 0
+
+  renderQuestions()
+}
+
+function showResultsPage(event) {
+  const questionsCount = questions.length
+  const isWinner = correctAnswerCounter === questionsCount
+
+  questionsAndResults.innerHTML = `
+    <section class=" flex-col px-4 py-6 text-center bg-green-600 rounded-lg shadow ">
+      <p class="text-3xl font-medium mb-4 text-white">
+        ${isWinner ? '¡GANASTE!' : '¡MEJOR SUERTE LA PRÓXIMA!'}
+      </p>
+
+      <p class="text-md font-medium text-white mb-4">
+        Respondiste ${correctAnswerCounter} de ${questionsCount}
+      </p>
+
+      <p class="text-md font-medium text-white mb-4">
+        Y este es tu puntaje: ${correctAnswerCounter * 10}
+      </p>
+
+      <img src="https://placehold.co/300x100" />
+
+      <div class="flex justify-end mt-10">
+        <button
+          class="text-gray-800 bg-white hover:bg-gray-100 border border-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 cursor-pointer"
+          onclick="startAgain(event)"
+        >
+          Empezar de nuevo
+        </button>
+      </div>
+    </section>
+  `
 }
 
 function renderQuestions() {
@@ -106,12 +145,16 @@ function renderQuestions() {
         <button class="hidden text-gray-800 bg-white hover:bg-gray-100 border border-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 cursor-pointer">
           <img src="./images/icon-arrow-left.svg" width="32" height="32" />
         </button>
-        <button class="text-gray-800 bg-white hover:bg-gray-100 border border-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 cursor-pointer"
+        <button
+          class="${(currentQuestionIndex === questions.length - 1) ? 'hidden' : ''} text-gray-800 bg-white hover:bg-gray-100 border border-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 cursor-pointer"
           onclick="nextQuestion(event)"
         >
           <img src="./images/icon-arrow-right.svg" width="32" height="32" />
         </button>
-        <button class="hidden text-gray-800 bg-white hover:bg-gray-100 border border-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 cursor-pointer">Ver Resultados</button>
+        <button
+          class="${(currentQuestionIndex === questions.length - 1) ? '' : 'hidden'} text-gray-800 bg-white hover:bg-gray-100 border border-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 cursor-pointer"
+          onclick="showResultsPage(event)"
+        >Ver Resultados</button>
       </div>
     </section>
   `

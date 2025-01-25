@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+
+/*
+576px  -> pantallas pequeñas (celulares)
+768px  -> pantallas pequeñas (tablets y celulares)
+992px  -> pantallas medianas (Desktop)
+1200px -> pantallas grandes (Desktops, TVs)
+*/
+
+@import './modules/variables.css';
+
+@import './modules/general.css';
+@import './modules/utils.css';
+
+@import './modules/header.css';
+@import './modules/product-detail.css';
+@import './modules/gallery.css';
+@import './modules/product.css';

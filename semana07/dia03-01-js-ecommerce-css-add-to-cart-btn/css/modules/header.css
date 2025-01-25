@@ -1,0 +1,55 @@
+/* HEADER */
+
+.header {
+  height: 4.5rem; /* 4.5 * 16px = 72px */
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid var(--neutral-color-light-grayish-blue);
+}
+
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+ /* Estas media querys se aplican a dispositivos desde desktops + */
+@media (min-width: 1200px) {
+  .header__wrapper {
+    gap: 2rem;
+  }
+}
+
+.header__menu {
+  cursor: pointer;
+}
+
+@media (min-width: 1200px) {
+  .header__menu {
+    display: none;
+  }
+}
+
+.header__icons {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header__links {
+  display: none;
+  font-size: .9rem;
+  font-weight: var(--font-weight-regular); /* Por defecto */
+  gap: 1rem;
+  color: var(--neutral-color-grayish-blue);
+}
+
+@media (min-width: 1200px) {
+  .header__links {
+    display: flex;
+  }
+}

@@ -1,0 +1,26 @@
+/* GENERAL */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: var(--font-size); /* Por defecto */
+}
+
+body {
+  font-family: var(--font-primary); 
+  /* background-color: var(--micolor); */
+}
+
+img {
+  /* RWD para imágenes */
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

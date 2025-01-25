@@ -1,0 +1,25 @@
+/* CUSTOM PROPERTIES <> VARIABLES */
+
+:root {
+  /* --micolor: red; */
+
+  /* FONTS */
+
+  --font-primary: "Kumbh Sans", serif;
+  --font-size: 16px;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* COLORS */
+
+  --primary-color-orange: hsl(26, 100%, 55%);
+  --primary-color-pale-orange: hsl(25, 100%, 94%);
+
+  --neutral-color-very-dark-blue: hsl(218, 12.10%, 12.90%);
+  --neutral-color-dark-grayish-blue: hsl(219, 9%, 45%);
+  --neutral-color-grayish-blue: hsl(220, 14%, 75%);
+  --neutral-color-light-grayish-blue: hsl(223, 64%, 98%);
+
+  --neutral-color-white: hsl(0, 0%, 100%);
+  --neutral-color-black: hsl(0, 0%, 0%);
+}

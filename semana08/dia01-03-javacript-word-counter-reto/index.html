@@ -6,26 +6,26 @@
   <title>Word Counter + Javascript</title>
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
-<body>
-  <main>
-    <h1>Word Counter</h1>
+<body class="h-screen place-content-center">
+  <main class="w-80 mx-auto bg-yellow-200 rounded-lg p-4">
+    <h1 class="text-3xl text-center">Word Counter</h1>
 
-    <section>
-      <div>
-        <span>Characters</span>
-        <span>0</span>
+    <section class="flex justify-between py-4">
+      <div class="flex flex-col gap-2 items-center">
+        <span class="text-sm">Characters</span>
+        <span class="text-3xl">0</span>
       </div>
-      <div>
-        <span>Words</span>
-        <span>0</span>
+      <div class="flex flex-col gap-2 items-center">
+        <span class="text-sm">Words</span>
+        <span class="text-3xl">0</span>
       </div>
-      <div>
-        <span>Paragraphs</span>
-        <span>0</span>
+      <div class="flex flex-col gap-2 items-center">
+        <span class="text-sm">Paragraphs</span>
+        <span class="text-3xl">0</span>
       </div>
     </section>
 
-    <textarea></textarea>
+    <textarea class="w-full h-52 p-2 border border-yellow-600 rounded-lg"></textarea>
   </main>
 
   <script src="./main.js"></script>

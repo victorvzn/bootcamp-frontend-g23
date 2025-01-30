@@ -63,3 +63,83 @@ const otroSaludoEnMayusculas = (nombre = 'Anónimo') => {
 
 console.log(otroSaludoEnMayusculas())
 console.log(otroSaludoEnMayusculas('Carlos'))
+
+// SPREAD OPERATOR (...)
+// Sirve para expandir un arreglo, llamar a funciones, incluso objetos
+
+const frutas = ['Manzanas', 'Naranjas', 'Plátanos', 'Sandías', 'Duraznos']
+
+const verduras = ['Papas', 'Cebollas']
+
+// const frutasYVerduras = frutas.concat(verduras) // Manera con concat
+const frutasYVerduras = [...verduras, ...frutas] // Manera con spread operator
+
+console.log(frutasYVerduras)
+
+const persona = {
+  nombre: 'Victor',
+  apellido: 'Villazón',
+  edad: 38,
+  color: 'Azúl'
+}
+
+const stack = {
+  javascript: 'React.js',
+  python: 'Django',
+  nodejs: 'Express.js',
+  color: 'Rosado'
+}
+
+const personaYSuStack = {
+  ...persona,
+  ...stack
+}
+
+console.log(personaYSuStack)
+
+const personaYSuStack2 = {
+  persona: persona,
+  stack: stack
+}
+
+console.log(personaYSuStack2)
+
+const personaYSuStack3 = {
+  persona,
+  stack
+}
+
+console.log(personaYSuStack3)
+
+// Template strings
+
+const nombre = 'Victor'
+const edad = 38
+
+console.log(`
+  Soy ${nombre}
+  y tengo ${edad} años
+`)
+
+// PARÁMETROS REST (operador rest -> ...)
+
+const numeros = [4, 6]
+
+function miSuma(numero1, numero2) {
+  return numero1 + numero2
+}
+
+console.log(miSuma(6, 9))
+console.log(miSuma(...numeros))
+
+const listaDeNumeros = [6, 33, 998, -66, 1, 453]
+
+console.log(
+  Math.max(25, 8, 65, 120),
+  Math.max(...listaDeNumeros)
+)
+
+console.log(
+  Math.min(25, 8, 65, 120),
+  Math.min(...listaDeNumeros)
+)

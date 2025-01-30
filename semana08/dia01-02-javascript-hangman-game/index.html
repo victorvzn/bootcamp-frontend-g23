@@ -4,23 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hangman Game + Javascript</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
 <body>
-  <main class="hangman">
+  <main class="hangman w-96 border mx-auto mt-4 p-6">
 
-    <h1 class="hangman__title">Hangman Game + Javascript</h1>
+    <h1 class="hangman__title text-xl font-medium text-center">Hangman Game + Javascript</h1>
 
-    <p class="hangman__maskedword">___________</p>
+    <p class="hangman__maskedword text-4xl text-center mb-8">___________</p>
 
-    <section class="hangman__buttons">
-      <!-- <button>A</button>
-      <button>B</button>
-      <button>C</button>
-      <button>...</button>
-      <button>Z</button> -->
+    <section class="hangman__buttons grid grid-cols-6 gap-4">
+      <button class="p-2 bg-blue-500 text-white font-bold text-xl cursor-pointer hover:bg-blue-400 duration-300">A</button>
     </section>
 
-    <section class="hangman__result"></section>
+    <section class="hangman__result hidden text-3xl mt-8 text-center uppercase font-black text-green-500">
+      ¡Ganaste!
+    </section>
     
   </main>
 

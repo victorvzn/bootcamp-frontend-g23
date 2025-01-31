@@ -32,3 +32,6 @@ fetch(url)
     console.log(data)
     renderPosts(data)
   })
+  .catch(error => {
+    console.log('ERROR INESPERADO:', error)
+  })

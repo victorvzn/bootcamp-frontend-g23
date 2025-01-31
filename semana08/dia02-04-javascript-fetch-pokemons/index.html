@@ -6,31 +6,31 @@
   <title>POKEMON LIST</title>
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
-<body>
-  <main>
-    <div>
-      <h1>Pokemon List</h1>
+<body class="bg-amber-100 place-content-center mt-8">
+  <main class="w-[500px] border flex justify-between mx-auto">
+    <div class="flex flex-col gap-2 p-4">
+      <h1 class="text-2xl font-medium">Pokemon List</h1>
 
       <strong id="favoritePokemons">Favorites: 0</strong>
 
       <section id="pokemonList" class="pokemon-list"></section>
 
       <div>
-        <button id="firstPage">First</button>
-        <button id="prevPage">Prev</button>
-        <span id="currentPage">1</span>
-        <button id="nextPage">Next</button>
-        <button id="lastPage">Last</button>
+        <button id="firstPage" class="bg-blue-400 p-2 text-white cursor-pointer">First</button>
+        <button id="prevPage" class="bg-blue-400 p-2 text-white cursor-pointer">Prev</button>
+        <span id="currentPage" class="p-2 font-medium text-2xl">1</span>
+        <button id="nextPage" class="bg-blue-400 p-2 text-white cursor-pointer">Next</button>
+        <button id="lastPage" class="bg-blue-400 p-2 text-white cursor-pointer">Last</button>
       </div>
     </div>
 
-    <form>
-      <h3>Pokemon</h3>
+    <form class="flex flex-col gap-2 p-4">
+      <h3 class="text-2xl font-medium">Pokemon</h3>
       <input id="id" type="hidden" value="" />
-      <input id="name" type="text" placeholder="Pokemon name" required />
-      <input id="image" type="text" placeholder="Pokemon image" />
-      <input type="submit" value="Guardar" />
-      <input type="reset" value="Limpiar" />
+      <input id="name" type="text" placeholder="Pokemon name" required  class="border border-amber-600 p-2 rounded-xl" />
+      <input id="image" type="text" placeholder="Pokemon image" class="border border-amber-600 p-2 rounded-xl" />
+      <input type="submit" value="Guardar" class="bg-green-400 p-2 text-white cursor-pointer" />
+      <input type="reset" value="Limpiar" class="bg-green-400 p-2 text-white cursor-pointer" />
     </form>
   </main>
 

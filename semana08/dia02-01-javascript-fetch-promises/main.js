@@ -1,6 +1,18 @@
 const url = 'https://jsonplaceholder.typicode.com/posts'
 
-// OBJETIVO: Traer información en formato JSon desde una URL
+// OBJETIVO: Traer información en formato JSON desde una URL
+
+// URL
+// MÉTODOS: GET, POST, PUT, DELETE (PATCH, OPTIONS)
+// ESTADOS: 
+// * 200 OK
+// * 201 Created
+// * 204 No Content
+// * 400 Bad Request
+// * 401 Unauthorized
+// * 403 Forbidden
+// * 404 Not Found
+// * 500 Internal Server Error
 
 // fetch(url) // Devuelve una promesa (Promise)
 //   .then(response => response.json()) // Convertimos la respuesta a un objeto JS

@@ -27,6 +27,7 @@ fetch(url)
     console.log(data)
     renderCharacters(data.items)
   })
+  .catch(error => console.log(error))
 
 
 // TODO: Añadir al renderizado de characters una paginación agregando botón anterior y siguiente

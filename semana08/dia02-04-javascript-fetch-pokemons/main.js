@@ -8,6 +8,8 @@ const fetchPokemons = async () => {
   return data
 }
 
+// TODO: Mostrar las imagenes de cada pokemon
+
 const renderPokemons = async (pokemons = []) => {
   const pokemonsList = document.getElementById('pokemonList')
 

@@ -7,13 +7,13 @@
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
 <body class="bg-amber-100 place-content-center mt-8">
-  <main class="w-[500px] border flex justify-between mx-auto">
+  <main class="w-[600px] border flex justify-between mx-auto">
     <div class="flex flex-col gap-2 p-4">
       <h1 class="text-2xl font-medium">Pokemon List</h1>
 
       <strong id="favoritePokemons">Favorites: 0</strong>
 
-      <section id="pokemonList" class="pokemon-list"></section>
+      <section id="pokemonList" class="pokemon-list grid grid-cols-3 gap-1"></section>
 
       <div>
         <button id="firstPage" class="bg-blue-400 p-2 text-white cursor-pointer">First</button>

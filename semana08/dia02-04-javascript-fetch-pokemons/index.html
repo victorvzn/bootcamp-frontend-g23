@@ -7,30 +7,32 @@
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
 <body class="bg-amber-100 place-content-center mt-8">
-  <main class="w-[600px] border flex justify-between mx-auto">
+  
+  
+  <main class="container flex flex-col-reverse md:flex-row justify-between mx-auto">
     <div class="flex flex-col gap-2 p-4">
-      <h1 class="text-2xl font-medium">Pokemon List</h1>
+      <h1 class="container text-2xl font-medium">Pokemon List</h1>
 
       <strong id="favoritePokemons">Favorites: 0</strong>
 
-      <section id="pokemonList" class="pokemon-list grid grid-cols-3 gap-1"></section>
+      <section id="pokemonList" class="pokemon-list grid grid-cols-3 md:grid-cols-6 gap-4"></section>
 
-      <div>
-        <button id="firstPage" class="bg-blue-400 p-2 text-white cursor-pointer">First</button>
-        <button id="prevPage" class="bg-blue-400 p-2 text-white cursor-pointer">Prev</button>
-        <span id="currentPage" class="p-2 font-medium text-2xl">1</span>
-        <button id="nextPage" class="bg-blue-400 p-2 text-white cursor-pointer">Next</button>
-        <button id="lastPage" class="bg-blue-400 p-2 text-white cursor-pointer">Last</button>
+      <div class="flex justify-center gap-2">
+        <button id="firstPage" class="bg-blue-400 hover:bg-blue-500 duration-300 py-2 px-4 rounded-md text-white cursor-pointer">First</button>
+        <button id="prevPage" class="bg-blue-400 hover:bg-blue-500 duration-300 py-2 px-4 rounded-md text-white cursor-pointer">Prev</button>
+        <span id="currentPage" class="py-2 px-4 rounded-md font-medium text-2xl">1</span>
+        <button id="nextPage" class="bg-blue-400 hover:bg-blue-500 duration-300 py-2 px-4 rounded-md text-white cursor-pointer">Next</button>
+        <button id="lastPage" class="bg-blue-400 hover:bg-blue-500 duration-300 py-2 px-4 rounded-md text-white cursor-pointer">Last</button>
       </div>
     </div>
 
     <form class="flex flex-col gap-2 p-4">
-      <h3 class="text-2xl font-medium">Pokemon</h3>
+      <h3 class="text-2xl font-medium">New Pokemon</h3>
       <input id="id" type="hidden" value="" />
       <input id="name" type="text" placeholder="Pokemon name" required  class="border border-amber-600 p-2 rounded-xl" />
       <input id="image" type="text" placeholder="Pokemon image" class="border border-amber-600 p-2 rounded-xl" />
-      <input type="submit" value="Guardar" class="bg-green-400 p-2 text-white cursor-pointer" />
-      <input type="reset" value="Limpiar" class="bg-green-400 p-2 text-white cursor-pointer" />
+      <input type="submit" value="Guardar" class="bg-green-400 hover:bg-green-500 duration-300 py-2 px-4 rounded-md text-white cursor-pointer" />
+      <input type="reset" value="Limpiar" class="bg-green-400 hover:bg-green-500 duration-300 py-2 px-4 rounded-md text-white cursor-pointer" />
     </form>
   </main>
 

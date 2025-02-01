@@ -7,6 +7,7 @@ let pokemonsFavorites = JSON.parse(localStorage.getItem('pokemon-favorites')) ??
 
 const elNextPage = document.querySelector('#nextPage')
 const elCurrentPage = document.querySelector('#currentPage')
+const elPokemonForm = document.querySelector('#pokemonForm')
 
 const fetchPokemons = async (page = 1) => {
   const OFFSET = (page - 1) * LIMIT
@@ -50,11 +51,11 @@ const renderPokemons = async (pokemons = []) => {
         <h2 class="font-medium mb-2">#${pokemon.id} ${pokemon.name}</h2>
         <img src="${pokemon.image}" class="aspect-square w-full" />
         <div class="flex justify-between mt-1 gap-2">
-          <button onclick="readPokemon(${pokemon.id})" class="${pokemon.isFavorite ? '' : 'hidden'} bg-amber-400 hover:bg-amber-500 duration-300 py-2 px-3 rounded-md text-white cursor-pointer">
-            <svg  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-edit w-5 h-5"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" /><path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" /><path d="M16 5l3 3" /></svg>
-          </button>
           <button onclick="toggleFavorite('${pokemon.id}', '${pokemon.name}', '${pokemon.image}')" class="bg-amber-400 hover:bg-amber-500 duration-300 py-2 px-4 rounded-md text-white cursor-pointer">
-            <svg viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="${pokemon.isFavorite ? 'text-amber-800 fill-amber-800' : ''} icon icon-tabler icons-tabler-outline icon-tabler-star  w-5 h-5"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg>
+          <svg viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="${pokemon.isFavorite ? 'text-amber-800 fill-amber-800' : ''} icon icon-tabler icons-tabler-outline icon-tabler-star  w-5 h-5"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg>
+          </button>
+          <button onclick="readPokemon('${pokemon.id}')" class="${pokemon.isFavorite ? '' : 'hidden'} bg-amber-400 hover:bg-amber-500 duration-300 py-2 px-3 rounded-md text-white cursor-pointer">
+            <svg  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-edit w-5 h-5"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" /><path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" /><path d="M16 5l3 3" /></svg>
           </button>
         </div>
       </article>
@@ -79,7 +80,18 @@ elNextPage.addEventListener('click', async (event) => {
 // TODO: Implementar el botón previous page de la paginación y validar su uso
 
 const readPokemon = (pokemonId) => {
-  console.log(pokemonId)
+  const elPokemonForm = document.forms['pokemonForm']
+
+  const currentFavorites = JSON.parse(localStorage.getItem('pokemon-favorites')) ?? []
+
+  const foundPokemon = currentFavorites.find(favorite => favorite.id === pokemonId)
+
+  elPokemonForm.id.value = foundPokemon.id
+  elPokemonForm.name.value = foundPokemon.name
+  elPokemonForm.image.value = foundPokemon.image
+
+  // console.log(foundPokemon)
+  // console.log(pokemonId)
 }
 
 const toggleFavorite = async (id, name, image) => {
@@ -101,6 +113,12 @@ const toggleFavorite = async (id, name, image) => {
 
   renderPokemons(dataPokemons.results)
 }
+
+elPokemonForm.addEventListener('submit', (event) => {
+  event.preventDefault() // Evita el comportamiento por defecto del formulario en su refrescado de la página
+
+  console.log('Guardando data...')
+})
 
 fetchPokemons()
   .then(data => {

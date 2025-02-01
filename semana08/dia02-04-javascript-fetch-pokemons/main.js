@@ -1,6 +1,11 @@
+let page = 1
 const LIMIT = 6
 
-const fetchPokemons = async (page = 50) => {
+
+const elNextPage = document.querySelector('#nextPage')
+const elCurrentPage = document.querySelector('#currentPage')
+
+const fetchPokemons = async (page = 1) => {
   const OFFSET = (page - 1) * LIMIT
 
   const url = `https://pokeapi.co/api/v2/pokemon?offset=${OFFSET}&limit=${LIMIT}`
@@ -35,7 +40,7 @@ const renderPokemons = async (pokemons = []) => {
   pokemons.forEach(pokemon => {
     elements += `
       <article class="bg-amber-200 flex flex-col justify-center items-center p-1 rounded-lg border border-amber-400  capitalize">
-        <h2 class="font-medium mb-2">${pokemon.name}</h2>
+        <h2 class="font-medium mb-2">#${pokemon.id} ${pokemon.name}</h2>
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png" class="aspect-square w-full" />
         <div class="flex justify-between mt-1 gap-2">
           <button class="bg-amber-400 hover:bg-amber-500 duration-300 py-2 px-3 rounded-md text-white cursor-pointer">
@@ -50,7 +55,21 @@ const renderPokemons = async (pokemons = []) => {
   })
 
   pokemonsList.innerHTML = elements
+
+  elCurrentPage.textContent = `Page ${page}`
 }
+
+elNextPage.addEventListener('click', async (event) => {
+  page = page + 1
+
+  const dataPokemons = await fetchPokemons(page)
+
+  renderPokemons(dataPokemons.results)
+})
+
+// TODO: Implementar el botón first page de la paginación
+// TODO: Implementar el botón last page de la paginación
+// TODO: Implementar el botón previous page de la paginación
 
 fetchPokemons()
   .then(data => {

@@ -8,6 +8,7 @@ let pokemonsFavorites = JSON.parse(localStorage.getItem('pokemon-favorites')) ??
 const elNextPage = document.querySelector('#nextPage')
 const elCurrentPage = document.querySelector('#currentPage')
 const elPokemonForm = document.querySelector('#pokemonForm')
+const elFavoritePokemons = document.querySelector('#favoritePokemons')
 
 const fetchPokemons = async (page = 1) => {
   const OFFSET = (page - 1) * LIMIT
@@ -27,7 +28,8 @@ const fetchPokemons = async (page = 1) => {
     return {
       ...pokemon,
       id,
-      image,
+      name: Boolean(foundFavorite) ? foundFavorite.name : pokemon.name,
+      image: Boolean(foundFavorite) ? foundFavorite.image : image,
       isFavorite: Boolean(foundFavorite)
     }
   })
@@ -65,6 +67,8 @@ const renderPokemons = async (pokemons = []) => {
   pokemonsList.innerHTML = elements
 
   elCurrentPage.textContent = `Page ${page}`
+
+  elFavoritePokemons.textContent = `Favorites: ${pokemonsFavorites.length}`
 }
 
 elNextPage.addEventListener('click', async (event) => {
@@ -114,22 +118,45 @@ const toggleFavorite = async (id, name, image) => {
   renderPokemons(dataPokemons.results)
 }
 
-elPokemonForm.addEventListener('submit', (event) => {
+elPokemonForm.addEventListener('submit', async (event) => {
   event.preventDefault() // Evita el comportamiento por defecto del formulario en su refrescado de la página
 
-  console.log('Guardando data...')
+  // console.log('Guardando data...')
 
   // 1. Obtener la información del formulario
+  const pokemonForm = document.forms['pokemonForm']
+
+  const id = pokemonForm.id.value;
+  const name = pokemonForm.name.value;
+  const image = pokemonForm.image.value;
 
   // 2. Modificar el arreglo del favoritos con los nuevos datos del formulario
 
-  // 3. Guardar esa data en el pokemonFavorites
+  const modifiedPokemons = pokemonsFavorites.map(pokemon => {
+    if (pokemon.id === id) {
+      return { id, name, image }
+    }
+
+    return pokemon
+  })
+
+  // 3. Guardar esa data en el pokemonFavorites (memoria)
+
+  pokemonsFavorites = modifiedPokemons
 
   // 4. Guardamos los pokemons modificados en localstorage
 
+  localStorage.setItem('pokemon-favorites', JSON.stringify(modifiedPokemons))
+
   // 5. Limpiar el formulario
 
+  pokemonForm.reset()
+
   // 6. Renderizamos el listado de pokemons
+
+  const data = await fetchPokemons(page)
+  renderPokemons(data.results)
+  elCurrentPage.textContent = `Page ${page}`
 })
 
 fetchPokemons()

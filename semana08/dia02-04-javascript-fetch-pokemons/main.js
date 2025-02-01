@@ -5,7 +5,20 @@ const fetchPokemons = async () => {
 
   const data  = await response.json() // Convierte la respueste en formato JS
 
-  return data
+  const dataResults = data.results.map(pokemon => {
+    // url: "https://pokeapi.co/api/v2/pokemon/1/"
+    const id = pokemon.url.split('/').at(6)
+    
+    return {
+      ...pokemon,
+      id
+    }
+  })
+
+  return {
+    ...data,
+    results: dataResults
+  }
 }
 
 // TODO: Mostrar las imagenes de cada pokemon
@@ -19,7 +32,7 @@ const renderPokemons = async (pokemons = []) => {
     elements += `
       <article class="bg-amber-200 flex flex-col justify-center items-center p-1 rounded-lg border border-amber-400  capitalize">
         <h2 class="font-medium mb-2">${pokemon.name}</h2>
-        <img src="https://placehold.co/180x180" class="aspect-square w-full" />
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png" class="aspect-square w-full" />
         <div class="flex justify-between mt-1 gap-2">
           <button class="bg-amber-400 hover:bg-amber-500 duration-300 py-2 px-3 rounded-md text-white cursor-pointer">
             <svg  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-edit w-5 h-5"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" /><path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" /><path d="M16 5l3 3" /></svg>

@@ -1,7 +1,7 @@
 let page = 1
 const LIMIT = 6
 
-const pokemonsFavorites = JSON.parse(localStorage.getItem('pokemon-favorites')) ?? []
+let pokemonsFavorites = JSON.parse(localStorage.getItem('pokemon-favorites')) ?? []
 
 // console.log(pokemonsFavorites)
 
@@ -83,11 +83,23 @@ const readPokemon = (pokemonId) => {
 }
 
 const toggleFavorite = async (id, name, image) => {
-  pokemonsFavorites.push({ id, name, image })
+  const existPokemonFavorite = pokemonsFavorites.some(favorite => favorite.id === id)
+
+  if (existPokemonFavorite) {
+    // Retirar el pokemon de la lista de favoritos
+    pokemonsFavorites = pokemonsFavorites.filter(pokemon => pokemon.id !== id)
+  } else {
+    // Agregar al listado de favoritos
+    pokemonsFavorites.push({ id, name, image })
+  }
 
   console.log('toggleFavorite', pokemonsFavorites)
 
   localStorage.setItem('pokemon-favorites', JSON.stringify(pokemonsFavorites))
+
+  const dataPokemons = await fetchPokemons(page)
+
+  renderPokemons(dataPokemons.results)
 }
 
 fetchPokemons()

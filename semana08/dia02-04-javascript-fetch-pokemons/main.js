@@ -118,6 +118,18 @@ elPokemonForm.addEventListener('submit', (event) => {
   event.preventDefault() // Evita el comportamiento por defecto del formulario en su refrescado de la página
 
   console.log('Guardando data...')
+
+  // 1. Obtener la información del formulario
+
+  // 2. Modificar el arreglo del favoritos con los nuevos datos del formulario
+
+  // 3. Guardar esa data en el pokemonFavorites
+
+  // 4. Guardamos los pokemons modificados en localstorage
+
+  // 5. Limpiar el formulario
+
+  // 6. Renderizamos el listado de pokemons
 })
 
 fetchPokemons()

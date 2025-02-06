@@ -1,12 +1,38 @@
+import { useState } from "react"
+
 const App = () => {
   // TODO: Hacer la calculadora usando React.js
 
   // numeroActual
   // operador
   // operando
+  const [numeroActual, setNumeroActual] = useState('0')
+  const [operador, setOperador] = useState('')
+  const [operando, setOperando] = useState('')
 
   const handleButton = (event) => {
-    console.log(event.target.textContent)
+    const buttonText = event.target.textContent
+
+    if ('+-*'.includes(buttonText)) {
+      setOperador(buttonText)
+      setOperando(Number(numeroActual))
+      setNumeroActual('0')
+    } else if (buttonText === '=') {
+      if (operador === '+') {
+        setNumeroActual(Number(operando) + Number(numeroActual))
+      } else if (operador === '-') {
+        setNumeroActual(Number(operando) - Number(numeroActual))
+      } else if (operador === '*') {
+        setNumeroActual(Number(operando) * Number(numeroActual))
+      }
+    } else if (buttonText === 'CE') {
+      setNumeroActual('0')
+      setOperador('')
+      setOperando('')
+    } else {
+      console.log(Number(numeroActual + buttonText))
+      setNumeroActual(Number(numeroActual + buttonText))
+    }
   }
 
   return (
@@ -17,7 +43,7 @@ const App = () => {
         <input
           className="inputDisplay border px-2 py-2 text-right text-xl font-bold bg-white"
           type="text"
-          value="0"
+          value={numeroActual}
           readOnly
         />
 

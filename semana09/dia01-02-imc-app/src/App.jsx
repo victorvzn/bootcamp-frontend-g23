@@ -29,15 +29,15 @@ const App = () => {
 
   const imcResult = () => {
     let result = ''
-    console.log(imc)
+    console.log(imcToDecimal)
 
-    if (imc < 18.5) {
+    if (imcToDecimal < 18.50) {
       result = 'Baja'
-    } else if (imc >= 18.5 && imc <= 24.9) {
+    } else if (imcToDecimal >= 18.51 && imcToDecimal <= 24.9) {
       result = 'Normal'
-    } else if (imc >= 25 && imc <= 29.9) {
+    } else if (imcToDecimal >= 25.00 && imcToDecimal <= 29.9) {
       result = 'Sobrepeso'
-    } else if (imc > 30) {
+    } else if (imcToDecimal > 3000) {
       result = 'Obeso'
     } else {
       result = 'Datos incorrectos'

@@ -69,11 +69,38 @@ const App = () => {
         onSubmit={handleSubmit}
       />
 
-      <TodoList
-        todos={todos}
-        onCompleted={handleCompleted}
-        onRemoveTodo={handleRemoveTodo}
-      />
+      {/* TODO: 03 - Añadir una estadística de cuantas tareas estan completadas y el total de tareas. */}
+
+      <section className="flex justify-between items-center">
+        <span className="font-bold">
+          2 de 3
+        </span>
+        <button
+          className="bg-blue-500 text-white rounded-lg px-2 py-1 hover:bg-blue-700 duration-300 cursor-pointer"
+        >
+          Limpiar completadas
+        </button>
+      </section>
+
+      {/* Renderizado condicional */}
+
+      {
+        todos.length > 0
+          ? (
+            <TodoList
+              todos={todos}
+              onCompleted={handleCompleted}
+              onRemoveTodo={handleRemoveTodo}
+            />
+          )
+          : (
+            <div className="text-center font-medium text-gray-500">
+              Agrega más tareas en la parte superior.
+            </div>
+          )
+      }
+
+      
 
       <pre className="bg-slate-100 p-4 mt-8">{JSON.stringify(todos, null, 2)}</pre>
     </main>

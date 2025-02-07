@@ -1,6 +1,8 @@
 const TodoItem = ({ todo, onCompleted, onRemoveTodo }) => {
   // TODO: 02 - Darle funcionalidad al botón remover para quitar una tarea del estado todos.
 
+  // TODO: 04 - Editar el titulo del todo haciendo doble click en el titulo, esto hará que aparezca una caja de texto. Y para guardarlo solo debemos presionar enter en la caja de texto.
+
   return (
     <li className="flex gap-2 bg-yellow-200 p-2 rounded-lg">
       <input

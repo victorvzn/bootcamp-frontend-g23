@@ -22,6 +22,7 @@ const App = () => {
   ]
 
   const [todos, setTodos] = useState(DEFAULT_TODOS)
+  const [input, setInput ] = useState('')
 
   console.log(todos)
 
@@ -53,12 +54,46 @@ const App = () => {
 
     setTodos(updatedTodos)
   }
+
+  const handleChange = (event) => {
+    // Vamos a capturar lo que escribimos en la caja de texto
+    setInput(event.target.value)
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    
+    const newTodo = {
+      id: crypto.randomUUID(),
+      title: input,
+      completed: false
+    }
+
+    console.log(newTodo)
+
+    setTodos([...todos, newTodo])
+
+    setInput('')
+  }
  
   return (
     <main
       className="bg-yellow-100 w-[400px] mx-auto mt-10 border border-yellow-400 rounded-lg shadow-lg p-4"
     >
       <TodoHeader title='TODO APP + React + Tailwind' color='text-blue-500' />
+
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          className="w-full border border-yellow-400 my-3 p-2 rounded-lg"
+          placeholder="¿Qué deseas hacer hoy?"
+          required
+          value={input}
+          onChange={handleChange}
+        />
+
+        {/* {input} */}
+      </form>
 
       <TodoList
         todos={todos}

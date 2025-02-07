@@ -1,4 +1,4 @@
-const TodoItem = ({ todo, onCompleted }) => {
+const TodoItem = ({ todo, onCompleted, onRemoveTodo }) => {
   // TODO: 02 - Darle funcionalidad al botón remover para quitar una tarea del estado todos.
 
   return (
@@ -13,7 +13,11 @@ const TodoItem = ({ todo, onCompleted }) => {
         <span className={`font-medium ${todo.completed ? 'line-through' : ''}`}>
           {todo.title}
         </span>
-        <button className="bg-red-300 rounded-lg px-1 py-1 cursor-pointer">
+        <button
+          className="bg-red-300 rounded-lg px-1 py-1 cursor-pointer"
+          data-id={todo.id}
+          onClick={onRemoveTodo}
+        >
           ❌
         </button>
       </div>

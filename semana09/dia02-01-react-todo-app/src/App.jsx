@@ -46,13 +46,25 @@ const App = () => {
     setTodos(updatedTodos)
   }
 
+  const handleRemoveTodo = (event) => {
+    const { id } = event.target.dataset
+
+    const updatedTodos = todos.filter(todo => todo.id !== id)
+
+    setTodos(updatedTodos)
+  }
+ 
   return (
     <main
       className="bg-yellow-100 w-[400px] mx-auto mt-10 border border-yellow-400 rounded-lg shadow-lg p-4"
     >
       <TodoHeader title='TODO APP + React + Tailwind' color='text-blue-500' />
 
-      <TodoList todos={todos} onCompleted={handleCompleted} />
+      <TodoList
+        todos={todos}
+        onCompleted={handleCompleted}
+        onRemoveTodo={handleRemoveTodo}
+      />
 
       <pre className="bg-slate-100 p-4 mt-8">{JSON.stringify(todos, null, 2)}</pre>
     </main>

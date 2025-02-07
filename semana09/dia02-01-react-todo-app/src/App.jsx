@@ -11,12 +11,12 @@ const App = () => {
     {
       id: '2',
       title: 'Aprender CSS',
-      completed: false
+      completed: true
     },
     {
       id: '3',
       title: 'Aprender React.js + Tailwind',
-      completed: true
+      completed: false
     }
   ]
 
@@ -30,10 +30,22 @@ const App = () => {
     >
       <TodoHeader title='TODO APP + React + Tailwind' color='text-blue-500' />
 
-      <ul>
+      <ul className="flex flex-col gap-2 mt-4">
         {todos.map(todo => {
           return (
-            <li key={todo.id}>{todo.title}</li>
+            <li key={todo.id} className="flex gap-2 bg-yellow-200 p-2 rounded-lg">
+              <input
+                type="checkbox"
+              />
+              <div className="w-full flex justify-between items-center">
+                <span className={`font-medium ${todo.completed ? 'line-through' : ''}`}>
+                  {todo.title}
+                </span>
+                <button className="bg-red-300 rounded-lg px-1 py-1 cursor-pointer">
+                  ❌
+                </button>
+              </div>
+            </li>
           )
         })}
       </ul>

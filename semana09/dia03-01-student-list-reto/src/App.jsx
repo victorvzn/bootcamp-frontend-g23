@@ -47,11 +47,71 @@ const App = () => {
 
   // TODO: Reto 1 - Guardar un nuevo studiante en el estado students manejando el formulario.
 
+  const handleSave = (event) => {
+    event.preventDefault();
+
+    const isNewStudent = form.id === ''
+    
+    if (isNewStudent) {
+      const newStudent = {
+        id: crypto.randomUUID(),
+        name: form.name,
+        city: form.city
+      }
+
+      const updatedStudents = [...students, newStudent]
+
+      setStudents(updatedStudents)
+    } else {
+      // Update Student
+      const updatedStudents = students.map(student => {
+        if (student.id === form.id) {
+          return {
+            ...student,
+            name: form.name,
+            city: form.city
+          }
+        }
+
+        return student
+      })
+
+      setStudents(updatedStudents)
+    }
+
+    setForm(DEFAULT_FORM)
+  }
+
+  const handleRemove = (id) => {
+    console.log('Deleting student', id)
+
+    const updatedStudents = students.filter(student => student.id !== id)
+
+    setStudents(updatedStudents)
+  }
+
+  // Opción 1: Update 🥺
+  // const handleUpdate = (id) => {
+  //   console.log('Updating student', id)
+
+  //   const studentFound = students.find(student => student.id === id)
+
+  //   setForm(studentFound)
+  // }
+
+  // Opción 2: Update ✅
+  const handleUpdate = (student) => {
+    setForm(student)
+  }
+
   return (
     <main className="w-96 mx-auto border rounded-lg mt-6 p-3">
       <h1 className="text-2xl font-semibold text-center mb-3">Student List - CRUD</h1>
 
-      <form className="flex flex-col gap-3 bg-slate-300 p-3 rounded-lg border border-slate-200">
+      <form
+        className="flex flex-col gap-3 bg-slate-300 p-3 rounded-lg border border-slate-200"
+        onSubmit={handleSave}
+      >
         <label className="flex flex-col gap-2">
           <span className="text-sm font-medium text-slate-700">Name</span>
           <input
@@ -61,6 +121,7 @@ const App = () => {
             placeholder="Ex. Victor Villazón"
             required
             onChange={handleChange}
+            value={form.name}
           />
         </label>
         <label className="flex flex-col gap-2">
@@ -71,6 +132,7 @@ const App = () => {
             type="text"
             placeholder="Ex. Chiclayo"
             onChange={handleChange}
+            value={form.city}
           />
         </label>
         
@@ -92,10 +154,16 @@ const App = () => {
               <div className="text-left font-semibold">{student.name}</div>
               <div className="text-left">{student.city}</div>
               <div className="flex gap-2">
-                <button className="text-blue-500 cursor-pointer">
+                <button
+                  className="text-blue-500 cursor-pointer"
+                  onClick={() => handleUpdate(student)}
+                >
                   <TbEdit size={20} />
                 </button>
-                <button className="text-red-500 cursor-pointer">
+                <button
+                  className="text-red-500 cursor-pointer"
+                  onClick={() => handleRemove(student.id)}
+                >
                   <TbTrash size={20} />
                 </button>
               </div>

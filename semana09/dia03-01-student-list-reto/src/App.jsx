@@ -5,23 +5,23 @@ import { useState } from "react";
 // TODO: Reto 2 - Persistir los datos de los estudiantes en localstorage
 
 const App = () => {
-  const DEFAULT_STUDENTS = [
-    {
-      id: '1',
-      name: 'Bulma',
-      city: 'Chiclayo'
-    },
-    {
-      id: '2',
-      name: 'Goku',
-      city: 'Trujillo'
-    },
-    {
-      id: '3',
-      name: 'Vegeta',
-      city: 'Lima'
-    }
-  ]
+  // const DEFAULT_STUDENTS = [
+    // {
+    //   id: '1',
+    //   name: 'Bulma',
+    //   city: 'Chiclayo'
+    // },
+    // {
+    //   id: '2',
+    //   name: 'Goku',
+    //   city: 'Trujillo'
+    // },
+    // {
+    //   id: '3',
+    //   name: 'Vegeta',
+    //   city: 'Lima'
+    // }
+  // ]
 
   const DEFAULT_FORM = {
     id: '',
@@ -29,7 +29,11 @@ const App = () => {
     city: ''
   }
 
-  const [students, setStudents] = useState(DEFAULT_STUDENTS)
+  const [students, setStudents] = useState(() => {
+    const localStorageStudents = JSON.parse(localStorage.getItem('STUDENTS') ?? '[]')
+    console.log(localStorageStudents)
+    return localStorageStudents
+  })
 
   const [form, setForm] = useState(DEFAULT_FORM)
 
@@ -64,6 +68,8 @@ const App = () => {
       const updatedStudents = [...students, newStudent]
 
       setStudents(updatedStudents)
+
+      localStorage.setItem('STUDENTS', JSON.stringify(updatedStudents))
     } else {
       // Update Student
       const updatedStudents = students.map(student => {
@@ -79,6 +85,8 @@ const App = () => {
       })
 
       setStudents(updatedStudents)
+
+      localStorage.setItem('STUDENTS', JSON.stringify(updatedStudents))
     }
 
     setForm(DEFAULT_FORM)
@@ -90,6 +98,8 @@ const App = () => {
     const updatedStudents = students.filter(student => student.id !== id)
 
     setStudents(updatedStudents)
+
+    localStorage.setItem('STUDENTS', JSON.stringify(updatedStudents))
   }
 
   // Opción 1: Update 🥺
@@ -146,7 +156,7 @@ const App = () => {
       </form>
 
       <div className="student__list mt-3 flex flex-col gap-2">
-        {students.map(student => {
+        {students && students.map(student => {
           return (
             <div
               className="student__row flex justify-between items-center bg-slate-100 p-2 rounded-lg border border-slate-200"

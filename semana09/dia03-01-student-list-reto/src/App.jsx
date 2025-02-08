@@ -21,7 +21,31 @@ const App = () => {
     }
   ]
 
+  const DEFAULT_FORM = {
+    id: '',
+    name: '',
+    city: ''
+  }
+
   const [students, setStudents] = useState(DEFAULT_STUDENTS)
+
+  const [form, setForm] = useState(DEFAULT_FORM)
+
+  const handleChange = (event) => {
+    // console.log({ input: event.target })
+
+    // Uso destructuring para obtener el name y el value del objeto target
+    const { name, value } = event.target
+
+    console.log(name, value)
+
+    setForm({
+      ...form,
+      [name]: value
+    })
+  }
+
+  // TODO: Reto 1 - Guardar un nuevo studiante en el estado students manejando el formulario.
 
   return (
     <main className="w-96 mx-auto border rounded-lg mt-6 p-3">
@@ -32,17 +56,21 @@ const App = () => {
           <span className="text-sm font-medium text-slate-700">Name</span>
           <input
             className="bg-slate-50 border border-slate-300 text-slate-700 text-sm rounded-lg p-2.5"
+            name="name"
             type="text"
             placeholder="Ex. Victor Villazón"
             required
+            onChange={handleChange}
           />
         </label>
         <label className="flex flex-col gap-2">
           <span className="text-sm font-medium text-slate-700">City</span>
           <input
             className="bg-slate-50 border border-slate-300 text-slate-700 text-sm rounded-lg p-2.5"
+            name="city"
             type="text"
             placeholder="Ex. Chiclayo"
+            onChange={handleChange}
           />
         </label>
         
@@ -74,7 +102,8 @@ const App = () => {
             </div>
           )
         })}
-
+        
+        <pre className="border border-slate-200 p-3 rounded-lg bg-slate-50">{JSON.stringify(form, null, 2)}</pre>
         <pre className="border border-slate-200 p-3 rounded-lg bg-slate-50">{JSON.stringify(students, null, 2)}</pre>
       </div>
     </main>

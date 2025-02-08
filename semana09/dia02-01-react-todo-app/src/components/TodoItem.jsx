@@ -1,17 +1,18 @@
 import { useState } from "react"
 
-const TodoItem = ({ todo, onCompleted, onRemoveTodo }) => {
+const TodoItem = ({ todo, onCompleted, onRemoveTodo, onSave }) => {
   // TODO: 02 - Darle funcionalidad al botón remover para quitar una tarea del estado todos.
 
   // TODO: 04 - Editar el titulo del todo haciendo doble click en el titulo, esto hará que aparezca una caja de texto. Y para guardarlo solo debemos presionar enter en la caja de texto.
 
   const [isEditing, setIsEditing] = useState(false)
+  const [input, setInput] = useState(todo.title)
 
 
   const handleCancelOrSave = (event) => {
     // Averiguar si presionamos la tecla ESC o ENTER u otro más.
 
-    console.log(event.code)
+    // console.log(event.code)
 
     if (event.code === 'Escape') {
       console.log('Cancelling...')
@@ -22,6 +23,8 @@ const TodoItem = ({ todo, onCompleted, onRemoveTodo }) => {
     if (event.code === 'Enter') {
       console.log('Saving...')
       // Hay que guardar el todo editado
+      onSave()
+
       setIsEditing(false)
     }
   }
@@ -38,9 +41,12 @@ const TodoItem = ({ todo, onCompleted, onRemoveTodo }) => {
         {
           isEditing
             ? (
+              
               <input
                 className="w-full border-2 border-yellow-400 p-2 rounded-lg"
                 onKeyDown={handleCancelOrSave}
+                value={input}
+                onChange={(event) => setInput(event.target.value)}
               />
             )
             : (

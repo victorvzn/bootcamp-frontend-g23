@@ -1,6 +1,6 @@
 import TodoItem from "./TodoItem"
 
-const TodoList = ({ todos, onCompleted, onRemoveTodo }) => {
+const TodoList = ({ todos, onCompleted, onRemoveTodo, onSave }) => {
   // TODO: 01 - Separar el siguiente li en un componente llamada TodoItem.jsx
 
   return (
@@ -12,6 +12,7 @@ const TodoList = ({ todos, onCompleted, onRemoveTodo }) => {
             todo={todo}
             onCompleted={onCompleted}
             onRemoveTodo={onRemoveTodo}
+            onSave={onSave}
           />
         )
       })}

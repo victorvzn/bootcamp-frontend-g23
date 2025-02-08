@@ -66,6 +66,12 @@ const App = () => {
     setTodos(incompletedTodos)
   }
 
+  const handleSaveItem = (todo) => {
+    console.log('TODO SAVED!')
+    console.log(todo)
+    // TODO: 5 - Guardar el todo editado en el estado todos
+  }
+
   return (
     <main
       className="bg-yellow-100 w-[400px] mx-auto mt-10 border border-yellow-400 rounded-lg shadow-lg p-4"
@@ -92,6 +98,7 @@ const App = () => {
                 todos={todos}
                 onCompleted={handleCompleted}
                 onRemoveTodo={handleRemoveTodo}
+                onSave={handleSaveItem}
               />
             </>
 

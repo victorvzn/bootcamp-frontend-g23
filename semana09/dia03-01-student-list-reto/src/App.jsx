@@ -13,6 +13,7 @@ const App = () => {
             className="bg-slate-50 border border-slate-300 text-slate-700 text-sm rounded-lg p-2.5"
             type="text"
             placeholder="Ex. Victor Villazón"
+            required
           />
         </label>
         <label className="flex flex-col gap-2">

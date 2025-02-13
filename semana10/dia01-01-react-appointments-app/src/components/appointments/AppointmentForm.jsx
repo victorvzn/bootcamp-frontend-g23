@@ -1,4 +1,24 @@
-const AppointmentForm = () => {
+import { useState } from "react"
+
+const AppointmentForm = ({ onSave }) => {
+  const INITIAL_FORM_STATE = {
+    id: '',
+    petName: '',
+    petAge: '',
+    ownerName: '',
+    appointmentDate: '',
+    appointmentTime: '',
+    symptoms: '',
+  }
+
+  const [form, setForm] = useState(INITIAL_FORM_STATE)
+
+  const handleChange = (event) => {
+    const { name, value } = event.target
+
+    setForm({ ...form, [name]: value })
+  }
+
   return (
     <section className="w-[400px]">
       <h2 className="text-2xl text-center mb-4">Nuevo paciente</h2>
@@ -10,6 +30,7 @@ const AppointmentForm = () => {
           name="petName"
           placeholder="Nombre de la mascota. Ej. Firulais"
           required
+          onChange={handleChange}
         />
 
         <input
@@ -20,6 +41,7 @@ const AppointmentForm = () => {
           required
           min="0"
           max="30"
+          onChange={handleChange}
         />
 
         <input
@@ -28,6 +50,7 @@ const AppointmentForm = () => {
           name="ownerName"
           placeholder="Nombre del dueño. Ej. Fabricio"
           required
+          onChange={handleChange}
         />
 
         <input
@@ -35,6 +58,7 @@ const AppointmentForm = () => {
           type="date"
           name="appointmentDate"
           required
+          onChange={handleChange}
         />
 
         <input
@@ -42,6 +66,7 @@ const AppointmentForm = () => {
           type="time"
           name="appointmentTime"
           required
+          onChange={handleChange}
         />
 
         <textarea
@@ -49,6 +74,7 @@ const AppointmentForm = () => {
           name="symptoms"
           placeholder="Síntomas"
           rows={6}
+          onChange={handleChange}
         />
 
         <input
@@ -57,6 +83,8 @@ const AppointmentForm = () => {
           value="Guardar"
         />
       </form>
+
+      <pre>{JSON.stringify(form, null, 2)}</pre>
     </section>
   )
 }

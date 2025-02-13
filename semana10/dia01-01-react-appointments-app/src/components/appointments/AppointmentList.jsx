@@ -1,4 +1,6 @@
-const AppointmentList = () => {
+const AppointmentList = ({
+  appointments
+}) => {
   return (
     <>
       <section className="hidden w-full bg-amber-100 rounded-lg">
@@ -38,7 +40,10 @@ const AppointmentList = () => {
             </div>
           </div>
         </article>
+
+        <pre>{JSON.stringify(appointments, null, 2)}</pre>
       </section>
+
     </>
   )
 }

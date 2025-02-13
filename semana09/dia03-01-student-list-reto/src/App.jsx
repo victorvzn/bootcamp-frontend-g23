@@ -153,6 +153,12 @@ const App = () => {
           type="submit"
           value="Save student"
         />
+        <input
+          className="bg-amber-500 text-white hover:bg-amber-600 font-medium rounded-lg text-sm w-full py-2.5 cursor-pointer"
+          type="button"
+          value="Clean forms"
+          onClick={() => setForm(DEFAULT_FORM)}
+        />
       </form>
 
       <div className="student__list mt-3 flex flex-col gap-2">

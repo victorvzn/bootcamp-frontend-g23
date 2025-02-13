@@ -19,11 +19,29 @@ const AppointmentForm = ({ onSave }) => {
     setForm({ ...form, [name]: value })
   }
 
+  const handleSave = (event) => {
+    event.preventDefault();
+    
+    const newAppointment = {
+      ...form,
+      id: crypto.randomUUID()
+    }
+
+    console.log('Guardando cita:', newAppointment)
+
+    onSave(newAppointment)
+
+    setForm(INITIAL_FORM_STATE)
+  }
+
   return (
     <section className="w-[400px]">
       <h2 className="text-2xl text-center mb-4">Nuevo paciente</h2>
 
-      <form className="flex flex-col gap-4">
+      <form
+        className="flex flex-col gap-4"
+        onSubmit={handleSave}
+      >
         <input
           className="border rounded-lg p-3 shadow-lg"
           type="text"
@@ -31,6 +49,7 @@ const AppointmentForm = ({ onSave }) => {
           placeholder="Nombre de la mascota. Ej. Firulais"
           required
           onChange={handleChange}
+          value={form.petName}
         />
 
         <input
@@ -42,6 +61,8 @@ const AppointmentForm = ({ onSave }) => {
           min="0"
           max="30"
           onChange={handleChange}
+          value={form.petAge}
+
         />
 
         <input
@@ -51,6 +72,7 @@ const AppointmentForm = ({ onSave }) => {
           placeholder="Nombre del dueño. Ej. Fabricio"
           required
           onChange={handleChange}
+          value={form.ownerName}
         />
 
         <input
@@ -59,6 +81,7 @@ const AppointmentForm = ({ onSave }) => {
           name="appointmentDate"
           required
           onChange={handleChange}
+          value={form.appointmentDate}
         />
 
         <input
@@ -67,6 +90,7 @@ const AppointmentForm = ({ onSave }) => {
           name="appointmentTime"
           required
           onChange={handleChange}
+          value={form.appointmentTime}
         />
 
         <textarea
@@ -75,6 +99,7 @@ const AppointmentForm = ({ onSave }) => {
           placeholder="Síntomas"
           rows={6}
           onChange={handleChange}
+          value={form.symptoms}
         />
 
         <input

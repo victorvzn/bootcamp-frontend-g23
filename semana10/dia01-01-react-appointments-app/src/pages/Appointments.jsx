@@ -7,6 +7,8 @@ const Appointments = () => {
 
   const handleSave = (newAppointment) => {
     console.log('Me estan llamando al guardar el form desde el componente padre', newAppointment)
+
+    setAppointments([...appointments, newAppointment])
   }
 
   return (

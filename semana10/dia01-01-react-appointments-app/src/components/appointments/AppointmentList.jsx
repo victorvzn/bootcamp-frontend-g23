@@ -14,6 +14,8 @@ const AppointmentList = ({
       <section className=" w-full p-4 bg-amber-100 rounded-lg">
         <h2 className="text-2xl text-center mb-4">Listado de citas médicas</h2>
 
+        {/* TODO: 01. Renderizar las citas a partir de la propiedad appointments */}
+
         <article className="flex flex-col gap-3 mb-4">
           <div className="border-2 border-sky-500 bg-sky-200 p-3 rounded-lg">
             <div className="py-2">

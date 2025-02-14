@@ -87,22 +87,24 @@ const App = () => {
       // setStudents(updatedStudents)
       // localStorage.setItem('STUDENTS', JSON.stringify(updatedStudents))
     } else {
+      // TODO: Enviar una petición para actualiar un estudiante
+
       // Update Student
-      const updatedStudents = students.map(student => {
-        if (student.id === form.id) {
-          return {
-            ...student,
-            name: form.name,
-            city: form.city
-          }
-        }
+      // const updatedStudents = students.map(student => {
+      //   if (student.id === form.id) {
+      //     return {
+      //       ...student,
+      //       name: form.name,
+      //       city: form.city
+      //     }
+      //   }
 
-        return student
-      })
+      //   return student
+      // })
 
-      setStudents(updatedStudents)
+      // setStudents(updatedStudents)
 
-      localStorage.setItem('STUDENTS', JSON.stringify(updatedStudents))
+      // localStorage.setItem('STUDENTS', JSON.stringify(updatedStudents))
     }
 
     setForm(DEFAULT_FORM)

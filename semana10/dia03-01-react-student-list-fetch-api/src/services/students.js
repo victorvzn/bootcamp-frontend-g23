@@ -21,3 +21,13 @@ export const createStudent = async (data) => {
 
   return await response.json()
 }
+
+export const removeStudent = async (id) => {
+  const options = {
+    method: 'DELETE'
+  }
+
+  const response = await fetch(`${ENDPOINT_STUDENTS}/${id}`, options)
+
+  return await response.json()
+}

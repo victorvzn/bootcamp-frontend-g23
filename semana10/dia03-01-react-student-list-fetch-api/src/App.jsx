@@ -1,7 +1,8 @@
 import { TbEdit, TbTrash } from "react-icons/tb";
 import Avatar from 'boring-avatars'
 import { useEffect, useState } from "react";
-import { createStudent, fetchStudents } from "./services/students";
+import { createStudent, fetchStudents, removeStudent } from "./services/students";
+import Swal from 'sweetalert2'
 
 // TODO: Reto 2 - Persistir los datos de los estudiantes en localstorage
 
@@ -104,10 +105,30 @@ const App = () => {
     setForm(DEFAULT_FORM)
   }
 
-  const handleRemove = (id) => {
+  const handleRemove = async (id) => {
     // TODO: Enviar una petición para eliminar un estudiante
 
     console.log('Deleting student', id)
+
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        const response = await removeStudent(id)
+
+        console.log(response)
+
+        const dataStudents = await fetchStudents()
+
+        setStudents(dataStudents)
+      }
+    });
 
     // const updatedStudents = students.filter(student => student.id !== id)
     // setStudents(updatedStudents)

@@ -3,6 +3,7 @@ import Avatar from 'boring-avatars'
 import { useEffect, useState } from "react";
 import { createStudent, fetchStudents, removeStudent } from "./services/students";
 import Swal from 'sweetalert2'
+import { Toaster, toast } from 'sonner'
 
 // TODO: Reto 2 - Persistir los datos de los estudiantes en localstorage
 
@@ -80,6 +81,8 @@ const App = () => {
 
       setStudents(dataStudents)
 
+      toast.success('Student has been created')
+
       // const updatedStudents = [...students, newStudent]
       // setStudents(updatedStudents)
       // localStorage.setItem('STUDENTS', JSON.stringify(updatedStudents))
@@ -124,6 +127,8 @@ const App = () => {
 
         console.log(response)
 
+        toast.success('Student has been deleted')
+
         const dataStudents = await fetchStudents()
 
         setStudents(dataStudents)
@@ -151,6 +156,7 @@ const App = () => {
 
   return (
     <main className="w-96 mx-auto border rounded-lg mt-6 p-3">
+      <Toaster richColors position="top-right" />
       <h1 className="text-2xl font-semibold text-center mb-3">Student List - CRUD</h1>
 
       <form

@@ -1,7 +1,7 @@
 import { TbEdit, TbTrash } from "react-icons/tb";
 import Avatar from 'boring-avatars'
 import { useEffect, useState } from "react";
-import { fetchStudents } from "./services/students";
+import { createStudent, fetchStudents } from "./services/students";
 
 // TODO: Reto 2 - Persistir los datos de los estudiantes en localstorage
 
@@ -59,23 +59,29 @@ const App = () => {
 
   // TODO: Reto 1 - Guardar un nuevo studiante en el estado students manejando el formulario.
 
-  const handleSave = (event) => {
+  const handleSave = async (event) => {
     event.preventDefault();
 
     const isNewStudent = form.id === ''
     
     if (isNewStudent) {
       const newStudent = {
-        id: crypto.randomUUID(),
+        // id: crypto.randomUUID(),
         name: form.name,
         city: form.city
       }
 
-      const updatedStudents = [...students, newStudent]
+      const response = await createStudent(newStudent)
 
-      setStudents(updatedStudents)
+      console.log(response)
 
-      localStorage.setItem('STUDENTS', JSON.stringify(updatedStudents))
+      const dataStudents = await fetchStudents()
+
+      setStudents(dataStudents)
+
+      // const updatedStudents = [...students, newStudent]
+      // setStudents(updatedStudents)
+      // localStorage.setItem('STUDENTS', JSON.stringify(updatedStudents))
     } else {
       // Update Student
       const updatedStudents = students.map(student => {
@@ -99,13 +105,13 @@ const App = () => {
   }
 
   const handleRemove = (id) => {
+    // TODO: Enviar una petición para eliminar un estudiante
+
     console.log('Deleting student', id)
 
-    const updatedStudents = students.filter(student => student.id !== id)
-
-    setStudents(updatedStudents)
-
-    localStorage.setItem('STUDENTS', JSON.stringify(updatedStudents))
+    // const updatedStudents = students.filter(student => student.id !== id)
+    // setStudents(updatedStudents)
+    // localStorage.setItem('STUDENTS', JSON.stringify(updatedStudents))
   }
 
   // Opción 1: Update 🥺

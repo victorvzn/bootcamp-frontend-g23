@@ -13,11 +13,14 @@ const App = () => {
   const handleFirst = () => {
     // TODO: validar que la página vaya a la primera página
 
-    setPage(page + 1)
+    setPage(1)
   }
 
   const handlePrev = () => {
     // TODO: validar que la página sea mayor que cero
+    if (page <= 1) {
+      return
+    }
 
     setPage(page - 1)
   }

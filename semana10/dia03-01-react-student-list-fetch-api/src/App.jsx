@@ -1,11 +1,11 @@
 import { TbEdit, TbTrash } from "react-icons/tb";
 import Avatar from 'boring-avatars'
 import { useEffect, useState } from "react";
+import { fetchStudents } from "./services/students";
 
 // TODO: Reto 2 - Persistir los datos de los estudiantes en localstorage
 
 const App = () => {
-  const MOCKAPI_URL = 'https://67ad6dbf3f5a4e1477dda225.mockapi.io/students'
 
   // const DEFAULT_STUDENTS = [
     // {
@@ -35,16 +35,13 @@ const App = () => {
 
   const [form, setForm] = useState(DEFAULT_FORM)
 
-  const fetchStudents = async () => {
-    const response = await fetch(MOCKAPI_URL)
-
-    return await response.json()
-  }
-
+  // Nos ayuda a controlar el ciclo de vida de un componente
+  // CREACIÓN, ACTUALIZACIÓN Y ELIMINACIÓN DEL COMPONENTE
   useEffect(() => {
+    console.log('useEffect')
     fetchStudents()
       .then(setStudents)
-  }, [])
+  }, []) // Se ejecuta el useEffect al cargar el componente la primera vez con el []
 
   const handleChange = (event) => {
     // console.log({ input: event.target })

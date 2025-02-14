@@ -1,7 +1,12 @@
 import { TbEdit, TbTrash } from "react-icons/tb";
 import Avatar from 'boring-avatars'
 import { useEffect, useState } from "react";
-import { createStudent, fetchStudents, removeStudent } from "./services/students";
+import {
+  createStudent,
+  fetchStudents,
+  removeStudent,
+  updateStudent
+} from "./services/students";
 import Swal from 'sweetalert2'
 import { Toaster, toast } from 'sonner'
 
@@ -88,6 +93,16 @@ const App = () => {
       // localStorage.setItem('STUDENTS', JSON.stringify(updatedStudents))
     } else {
       // TODO: Enviar una petición para actualiar un estudiante
+
+      const response = await updateStudent(form)
+
+      console.log(response)
+
+      const dataStudents = await fetchStudents()
+
+      setStudents(dataStudents)
+
+      toast.success('Student has been updated')
 
       // Update Student
       // const updatedStudents = students.map(student => {

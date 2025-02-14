@@ -31,3 +31,23 @@ export const removeStudent = async (id) => {
 
   return await response.json()
 }
+
+export const updateStudent = async(data) => {
+  const student = {
+    name: data.name,
+    city: data.city
+  }
+
+  const options = {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(student)
+  }
+
+
+  const response = await fetch(`${ENDPOINT_STUDENTS}/${data.id}`, options)
+
+  return await response.json()
+}

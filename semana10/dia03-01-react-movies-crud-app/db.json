@@ -19,12 +19,12 @@
   ],
   "movies": [
     {
-      "id": "1",
-      "name": "Barbie",
+      "name": "Barbie-edited",
       "image": "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg",
-      "release": "2023-07-21",
-      "genreId": "1",
-      "resumen": "Resumen de prueba"
+      "release": "2023-07-29",
+      "genreId": "4",
+      "resumen": "Resumen de prueba-edited",
+      "id": "1"
     },
     {
       "id": "5",
@@ -51,12 +51,12 @@
       "id": "6664"
     },
     {
-      "id": "2084",
       "name": "hola3",
-      "image": "hola3",
+      "image": "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/taEVBdVSqYo9YeN3ycw2SosklZL.jpg",
       "release": "2025-02-28",
       "genreId": "4",
-      "resumen": "hola3"
+      "resumen": "hola3",
+      "id": "2084"
     }
   ]
 }

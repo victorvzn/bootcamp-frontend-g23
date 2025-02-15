@@ -29,3 +29,17 @@ export const deleteMovie = async (id) => {
 
   return await response.json()
 }
+
+export const updateMovie = async (id, data) => {
+  const options = {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  }
+
+  const response = await fetch(`${ENDPOINT_MOVIES}/${id}`, options)
+
+  return await response.json()
+}

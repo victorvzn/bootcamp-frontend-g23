@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { createMovie, deleteMovie, fetchMovies } from "./services/movies"
+import { createMovie, deleteMovie, fetchMovies, updateMovie } from "./services/movies"
 
 const App = () => {
   const INITIAL_FORM = {
@@ -32,20 +32,40 @@ const App = () => {
     event.preventDefault();
 
     // TODO: Guardar la película cuando estamos editando
+    const isNewMovie = form.id === ''
     
-    const response = await createMovie({
-      name: form.name,
-      image: form.image,
-      release: form.release,
-      genreId: form.genreId,
-      resumen: form.resumen,
-    })
+    if (isNewMovie) {
 
-    if (response) {
-      fetchMovies()
-        .then(data => setMovies(data))
+      const response = await createMovie({
+        name: form.name,
+        image: form.image,
+        release: form.release,
+        genreId: form.genreId,
+        resumen: form.resumen,
+      })
+      
+      if (response) {
+        fetchMovies()
+          .then(data => setMovies(data))
+      }
+    } else {
+      // Mandamos a actualizar nuestra película
+      const response = await updateMovie(form.id, {
+        name: form.name,
+        image: form.image,
+        release: form.release,
+        genreId: form.genreId,
+        resumen: form.resumen,
+      })
+      
+      if (response) {
+        fetchMovies()
+          .then(data => setMovies(data))
+      }
     }
 
+
+    
     setForm(INITIAL_FORM)
   }
 

@@ -1,0 +1,48 @@
+### Get all genres
+GET http://localhost:3000/genres
+
+### Get all movies
+GET http://localhost:3000/movies
+
+### GET a movie
+GET http://localhost:3000/movies/5
+
+### Create a movie 1
+POST http://localhost:3000/movies
+Content-Type: application/json
+
+{
+  "name": "Captain America: Brave New World",
+  "image": "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/pzIddUEMWhWzfvLI3TwxUG2wGoi.jpg",
+  "release": "2025-02-13",
+  "genreId": 2,
+  "resumen": "The future favors the brave."
+}
+
+### Create a movie 2
+POST http://localhost:3000/movies
+Content-Type: application/json
+
+{
+  "name": "yyyabas",
+  "image": "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/pzIddUEMWhWzfvLI3TwxUG2wGoi.jpg",
+  "release": "2025-02-13",
+  "genreId": 2,
+  "resumen": "adasd"
+}
+
+### DELETE a movie
+DELETE http://localhost:3000/movies/d4e4
+Accept: application/json
+
+### Update a movie 1
+PUT http://localhost:3000/movies/6664
+Content-Type: application/json
+
+{
+  "name": "Captain America: Brave New World - edited",
+  "image": "https://media.themoviedb.org/t/p/w300_and_h450_bestv2/pzIddUEMWhWzfvLI3TwxUG2wGoi.jpg",
+  "release": "2025-02-13",
+  "genreId": 5,
+  "resumen": "The future favors the brave. - edited"
+}

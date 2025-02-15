@@ -7,3 +7,17 @@ export const fetchMovies = async () => {
 
   return await response.json()
 }
+
+export const createMovie = async (data) => {
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  }
+
+  const response = await fetch(ENDPOINT_MOVIES, options)
+
+  return await response.json()
+}

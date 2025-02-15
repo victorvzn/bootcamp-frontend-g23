@@ -19,6 +19,8 @@ const App = () => {
       .then(data => setMovies(data))
   }, [])
 
+  // TODO: Crear una pelicula manejando el formulario
+
   return (
     <>
       <header className="container mx-auto border-b border-zinc-200 h-16 flex items-center px-4">

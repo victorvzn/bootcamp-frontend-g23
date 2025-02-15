@@ -1,0 +1,78 @@
+{
+  "genres": [
+    {
+      "id": 1,
+      "name": "Comedy"
+    },
+    {
+      "id": 2,
+      "name": "Action"
+    },
+    {
+      "id": 3,
+      "name": "Animation"
+    },
+    {
+      "id": 4,
+      "name": "Adventure"
+    }
+  ],
+  "movies": [
+    {
+      "id": 1,
+      "name": "Barbie",
+      "image": "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg",
+      "release": "2023-07-21",
+      "genreId": 1,
+      "resumen": "Resumen de prueba"
+    },
+    {
+      "id": 2,
+      "name": "Transformers: Rise of the Beasts",
+      "image": "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/gPbM0MK8CP8A174rmUwGsADNYKD.jpg",
+      "release": "2023-06-08",
+      "genreId": 2,
+      "resumen": "Resumen de prueba"
+    },
+    {
+      "id": 3,
+      "name": "Mission: Impossible - Dead Reckoning Part One",
+      "image": "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/NNxYkU70HPurnNCSiCjYAmacwm.jpg",
+      "release": "2023-07-13",
+      "genreId": 2,
+      "resumen": "Resumen de prueba"
+    },
+    {
+      "id": 4,
+      "name": "Guardians of the Galaxy Vol. 3",
+      "image": "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg",
+      "release": "2023-06-15",
+      "genreId": 2,
+      "resumen": "Resumen de prueba"
+    },
+    {
+      "id": 5,
+      "name": "The Flash",
+      "image": "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/rktDFPbfHfUbArZ6OOOKsXcv0Bm.jpg",
+      "release": "2023-06-15",
+      "genreId": 2,
+      "resumen": "Resumen de prueba"
+    },
+    {
+      "id": 6,
+      "name": "Spider-Man: Across the Spider-Verse ",
+      "image": "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg",
+      "release": "2023-06-02",
+      "genreId": 3,
+      "resumen": "Resumen de prueba"
+    },
+    {
+      "id": 7,
+      "name": "Indiana Jones and the Dial of Destiny",
+      "image": "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/Af4bXE63pVsb2FtbW8uYIyPBadD.jpg",
+      "release": "2023-06-30",
+      "genreId": 4,
+      "resumen": "Resumen de prueba"
+    }
+  ]
+}

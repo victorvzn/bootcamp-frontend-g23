@@ -21,3 +21,11 @@ export const createMovie = async (data) => {
 
   return await response.json()
 }
+
+export const deleteMovie = async (id) => {
+  const options = { method: 'DELETE' }
+
+  const response = await fetch(`${ENDPOINT_MOVIES}/${id}`, options)
+
+  return await response.json()
+}

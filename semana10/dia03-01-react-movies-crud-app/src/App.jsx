@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { createMovie, fetchMovies } from "./services/movies"
+import { createMovie, deleteMovie, fetchMovies } from "./services/movies"
 
 const App = () => {
   const INITIAL_FORM = {
@@ -30,6 +30,8 @@ const App = () => {
 
   const handleSave = async (event) => {
     event.preventDefault();
+
+    // TODO: Guardar la película cuando estamos editando
     
     const response = await createMovie({
       name: form.name,
@@ -47,9 +49,19 @@ const App = () => {
     setForm(INITIAL_FORM)
   }
 
-  const handleRemove = (id) => {
+  const handleRemove = async (id) => {
     // TODO: terminar la eliminación de una película desde el servidor
     console.log(id)
+    const response = await deleteMovie(id)
+
+    if (response) {
+      fetchMovies()
+        .then(data => setMovies(data))
+    }
+  }
+
+  const handleUpdate = (movieSelected) => {
+    setForm(movieSelected)
   }
 
   return (
@@ -109,6 +121,7 @@ const App = () => {
                     <div className="flex gap-3 ">
                       <button
                         className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                        onClick={() => handleUpdate(movie)}
                       >
                         Edit
                       </button>

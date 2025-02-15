@@ -114,7 +114,7 @@ const App = () => {
                   <td className="px-6 py-4 flex flex-col gap-2">
                     <strong>{movie.name}</strong>
                     <div><strong className="text-xs">Estreno: </strong> {movie.release}</div>
-                    <div><strong className="text-xs">Genero: </strong> {movie.genreId}</div>
+                    <div><strong className="text-xs">Genero: </strong> {movie?.genre?.name ? movie?.genre?.name : '-'}</div>
                     <div><strong className="text-xs">Resumen: </strong> {movie.resumen}</div>
                   </td>
                   <td className="px-6 py-4 ">

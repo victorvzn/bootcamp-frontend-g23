@@ -1,4 +1,6 @@
 const App = () => {
+  // TODO: Renderizar el listado de peliculas en la tabla que vienen desde localhost:3000/movies
+
   return (
     <>
       <header className="container mx-auto border-b border-zinc-200 h-16 flex items-center px-4">
@@ -26,7 +28,7 @@ const App = () => {
                   Nombre
                 </th>
                 <th scope="col" className="px-6 py-3">
-                  <span className="sr-only">Acciones</span>
+                  Acciones
                 </th>
               </tr>
             </thead>
@@ -36,13 +38,31 @@ const App = () => {
                   1
                 </th>
                 <td className="px-6 py-4">
-                  IMagen 1
+                  <img
+                    src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/r2J02Z2OpNTctfOSN1Ydgii51I3.jpg"
+                    width={100}
+                    height={250}
+                  />
                 </td>
-                <td className="px-6 py-4">
-                  Pelicula 1
+                <td className="px-6 py-4 flex flex-col gap-2">
+                  <strong>Guardians of the Galaxy Vol. 3</strong>
+                  <div><strong className="text-xs">Estreno: </strong> 2023-06-15</div>
+                  <div><strong className="text-xs">Genero: </strong> Acción</div>
+                  <div><strong className="text-xs">Resumen: </strong> resumen...</div>
                 </td>
-                <td className="px-6 py-4 text-right">
-                  <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                <td className="px-6 py-4 ">
+                  <div className="flex gap-3 ">
+                    <button
+                      className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                    >
+                      Edit
+                    </button>
+                    <button
+                      className="font-medium text-red-600 dark:text-blue-500 hover:underline"
+                    >
+                      Eliminar
+                    </button>
+                  </div>
                 </td>
               </tr>
             </tbody> 

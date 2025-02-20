@@ -7,3 +7,11 @@ export const fetchCharacters = async () => {
 
   return await response.json()
 }
+
+export const getCharacter = async (id) => {
+  const url = `${BASE_URL}/characters/${id}`
+
+  const response = await fetch(url)
+
+  return await response.json()
+}

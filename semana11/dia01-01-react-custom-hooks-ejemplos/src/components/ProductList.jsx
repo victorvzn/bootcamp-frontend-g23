@@ -5,7 +5,7 @@ const ProductList = () => {
     <>
       <h1>Product List</h1>
 
-
+      {/* TODO: Listar los productos del endpoint products(https://dummyjson.com/products) */}
     </>
   )
 }

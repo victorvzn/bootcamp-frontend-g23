@@ -5,6 +5,7 @@ import LayoutAuth from './layouts/LayoutAuth'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 import HomePage from './pages/HomePage'
+import CharacterPage from './pages/CharacterPage'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Routes>
         <Route element={<LayoutBase />}>
           <Route path='/' element={<HomePage />} />
+          <Route path='/characters/:id' element={<CharacterPage />} />
         </Route>
 
         <Route element={<LayoutAuth />}>

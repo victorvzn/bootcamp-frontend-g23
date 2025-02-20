@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 
+import { fetchProducts } from "../services/products"
+
 export const useProducts = () => {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(false)
@@ -7,8 +9,7 @@ export const useProducts = () => {
   useEffect(() => {
     setLoading(true)
 
-    fetch('https://dummyjson.com/products?delay=2000')
-      .then(response => response.json())
+    fetchProducts()
       .then(data => {
         setProducts(data.products)
       })

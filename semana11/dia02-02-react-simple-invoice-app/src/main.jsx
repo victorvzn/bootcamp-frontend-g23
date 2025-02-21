@@ -7,6 +7,7 @@ import { Login } from './pages/Login'
 import { Home } from './pages/Home'
 
 import { LayoutAuth } from './layouts/LayoutAuth'
+import { LayoutAdmin } from './layouts/LayoutAdmin'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -15,7 +16,9 @@ createRoot(document.getElementById('root')).render(
         <Route path='/' element={<Login />} />
       </Route>
 
-      <Route path='/home' element={<Home />} />
+      <Route element={<LayoutAdmin />}>
+        <Route path='/home' element={<Home />} />
+      </Route>
     </Routes>
   </BrowserRouter>,
 )

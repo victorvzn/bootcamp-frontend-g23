@@ -16,7 +16,7 @@ export const BaseInput = ({
         name={name}
         placeholder={placeholder}
         value={value}
-        onChange={e => onChange(e)}
+        onChange={event => onChange(event)}
       />
     </label>
   )

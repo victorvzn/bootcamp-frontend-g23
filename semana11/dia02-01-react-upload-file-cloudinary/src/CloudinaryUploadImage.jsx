@@ -76,6 +76,7 @@ export const CloudinaryUploadImage = ({ onUpload, onRemove }) => {
         <input
           className="hidden"
           type="file"
+          accept=".jpg, .png"
           onChange={handleUpload}
         />
       </label>

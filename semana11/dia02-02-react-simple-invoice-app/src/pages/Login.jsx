@@ -2,7 +2,13 @@ import { useState } from "react"
 import { BaseButton } from "../components/ui/BaseButton"
 import { BaseInput } from "../components/ui/BaseInput"
 
+import { login } from "../services/auth"
+
+import { useNavigate } from "react-router"
+
 export const Login = () => {
+  const navigate = useNavigate()
+
   const [form, setForm] = useState({
     username: '',
     password: ''
@@ -18,6 +24,20 @@ export const Login = () => {
     event.preventDefault();
     
     console.log('Haciendo login ...')
+    const { username, password } = form
+
+    const res = await login(username, password)
+
+    if (res) {
+      console.log(res)
+
+      localStorage.setItem('auth', JSON.stringify(res))
+
+      navigate('/home')
+
+    } else {
+      // TODO: Mostrar una alerta cuando el usuario no se autenticó correctamente
+    }
   }
 
   return (

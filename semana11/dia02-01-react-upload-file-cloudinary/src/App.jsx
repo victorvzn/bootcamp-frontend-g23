@@ -1,10 +1,14 @@
 import { Cloudinary } from '@cloudinary/url-gen'
+import { fill } from '@cloudinary/url-gen/actions/resize'
+
+import { useState } from 'react'
 
 const CLOUD_NAME = "dtmarfdry"
 const UPLOAD_PRESET = "g23-semana11"
 const FOLDER_NAME = "g23-semana11"
 
-const CloudinaryUploadImage = () => {
+const CloudinaryUploadImage = ({ onUpload, onRemove }) => {
+  const [image, setImage] = useState('')
 
   // 01 - Inicializar Cloudinary
   const cloudinary = new Cloudinary({ cloud: { cloudName: CLOUD_NAME } })
@@ -35,17 +39,37 @@ const CloudinaryUploadImage = () => {
 
       const data = await response.json()
 
-      console.log('Imagen subida:', data.url)
+      console.log('Imagen subida:', data)
+
+      const urlResizedImage = getImageUrl(data.public_id)
+
+      setImage(urlResizedImage)
+
+      onUpload(urlResizedImage)
     } catch (error) {
       console.error("Error subiendo image:", error)
     }
   }
 
+  const getImageUrl = (publicId) => {
+    return cloudinary.image(publicId)
+      .resize(fill().width(300).height(450)) // Redimensionar la image al cargarla
+      .toURL()
+  }
+
+  const handleRemove = () => {
+    setImage('')
+
+    onRemove()
+  }
+
   return (
     <div className="border shadow border-zinc-200 rounded-lg p-2 flex flex-col gap-2 w-52">
-      <img
-        src='http://placehold.co/300x450'
-      />
+      {image &&
+        <img
+          src={image}
+        />
+      }
 
       <label className="cursor-pointer bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition text-center">
         Upload an image
@@ -55,13 +79,31 @@ const CloudinaryUploadImage = () => {
           onChange={handleUpload}
         />
       </label>
-
-      <button className="cursor-pointer bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 transition text-center">Remove</button>
+      
+      {image &&
+        <button
+          className="cursor-pointer bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 transition text-center"
+          onClick={handleRemove}
+        >
+          Remove
+        </button>
+      }
     </div>
   )
 }
 
 const App = () => {
+  const [form, setForm] = useState({
+    image: ''
+  })
+
+  const handleUpload = (imageUrl) => {
+    setForm({
+      ...form,
+      image: imageUrl
+    })
+  }
+
   return (
     <>
       <header className="border-b-2">
@@ -73,7 +115,13 @@ const App = () => {
       </header>
   
       <main className="p-8">
-        <CloudinaryUploadImage />
+        <CloudinaryUploadImage
+          onUpload={handleUpload}
+          onRemove={() => setForm({ ...form, image: '' })}
+        />
+
+        <h3 className='text-xl mt-4'>Form state</h3>
+        <pre className='bg-zinc-300 p-4 rounded-lg'>{JSON.stringify(form, null, 2)}</pre>
       </main>
     </>
   )

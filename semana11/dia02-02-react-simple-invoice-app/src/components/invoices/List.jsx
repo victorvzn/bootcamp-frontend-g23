@@ -1,7 +1,7 @@
 import { TbChevronRight } from "react-icons/tb"
 import { Link } from "react-router"
 import BaseTag from "../ui/BaseTag"
-import { formatNumber } from "../../utils"
+import { formatDate, formatNumber } from "../../utils"
 
 const List = ({ invoices }) => {
   return (
@@ -18,7 +18,7 @@ const List = ({ invoices }) => {
             <span className="text-slate-400">#</span>
             <span className="font-extrabold uppercase">{invoice.code}</span>
           </div>
-          <div className="md:w-44 font-semibold text-zinc-500 text-center">{invoice.date}</div>
+          <div className="md:w-44 font-semibold text-zinc-500 text-center">{formatDate(invoice.date)}</div>
           <div className="md:w-44 font-semibold text-zinc-500 text-center">{invoice.fullName}</div>
           <div className="md:w-44 font-extrabold text-3xl text-zinc-800 text-center">
             {invoice.currencySymbol}

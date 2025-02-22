@@ -30,9 +30,9 @@ createRoot(document.getElementById('root')).render(
 
           <Route path='invoices'>
             <Route path='list' element={<InvoiceList />} />
-            <Route path=':id' element={<ProductsList />} />
-            <Route path='new' element={<ProductsList />} />
-            <Route path=':id/edit' element={<ProductsList />} />
+            <Route path=':id' element={<InvoiceView />} />
+            <Route path='new' element={<InvoiceNew />} />
+            <Route path=':id/edit' element={<InvoiceEdit />} />
           </Route>
         </Route>
 

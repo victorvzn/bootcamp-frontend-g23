@@ -13,6 +13,9 @@ import AuthValidation from './components/AuthValidation'
 
 import ProductsList from './pages/ProductsList'
 import { InvoiceList } from './pages/InvoiceList'
+import { InvoiceView } from './pages/InvoiceView'
+import { InvoiceNew } from './pages/InvoiceNew'
+import { InvoiceEdit } from './pages/InvoiceEdit'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>

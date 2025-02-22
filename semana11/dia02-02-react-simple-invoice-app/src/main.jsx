@@ -26,6 +26,8 @@ createRoot(document.getElementById('root')).render(
           <Route path='/home' element={<Home />} />
 
           <Route path='/products' element={<ProductsList />} />
+
+          
         </Route>
 
       </Route>

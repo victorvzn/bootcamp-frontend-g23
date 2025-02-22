@@ -3,7 +3,7 @@ import { Outlet, useNavigate } from "react-router"
 import { useAuth } from "../hooks/useAuth"
 
 export const LayoutAdmin = () => {
-  const { logout } = useAuth()
+  const { logout, user } = useAuth()
 
   const navigate = useNavigate()
 
@@ -21,7 +21,8 @@ export const LayoutAdmin = () => {
         <div className="container mx-auto flex justify-between">
           <h1 className="font-bold">Invoice app - HOME</h1>
 
-          <div>
+          <div className="flex gap-2">
+            <span className="font-bold">Bienvenid@ {user?.username}</span>
             <button onClick={handleLogout}>Logout</button>
           </div>
         </div>

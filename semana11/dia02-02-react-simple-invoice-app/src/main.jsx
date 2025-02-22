@@ -9,6 +9,10 @@ import { Home } from './pages/Home'
 import { LayoutAuth } from './layouts/LayoutAuth'
 import { LayoutAdmin } from './layouts/LayoutAdmin'
 
+import AuthValidation from './components/AuthValidation'
+
+import ProductsList from './pages/ProductsList'
+
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <Routes>
@@ -16,8 +20,14 @@ createRoot(document.getElementById('root')).render(
         <Route path='/' element={<Login />} />
       </Route>
 
-      <Route element={<LayoutAdmin />}>
-        <Route path='/home' element={<Home />} />
+      <Route element={<AuthValidation />}>
+
+        <Route element={<LayoutAdmin />}>
+          <Route path='/home' element={<Home />} />
+
+          <Route path='/products' element={<ProductsList />} />
+        </Route>
+
       </Route>
     </Routes>
   </BrowserRouter>,

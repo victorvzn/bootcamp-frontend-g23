@@ -1,3 +1,3 @@
 export const Home = () => {
-  return <h1>Home page 2</h1>
+  return <h1>Home page protegido</h1>
 }

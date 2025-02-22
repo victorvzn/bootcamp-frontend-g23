@@ -3,10 +3,13 @@ import { BaseButton } from "../components/ui/BaseButton"
 import { BaseInput } from "../components/ui/BaseInput"
 
 import { login } from "../services/auth"
+import { useAuth } from "../hooks/useAuth"
 
 import { useNavigate } from "react-router"
 
 export const Login = () => {
+  const { setAuth } = useAuth()
+
   const navigate = useNavigate()
 
   const [form, setForm] = useState({
@@ -31,7 +34,7 @@ export const Login = () => {
     if (res) {
       console.log(res)
 
-      localStorage.setItem('auth', JSON.stringify(res))
+      setAuth(res)
 
       navigate('/home')
 

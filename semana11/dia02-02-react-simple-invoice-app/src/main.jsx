@@ -12,6 +12,7 @@ import { LayoutAdmin } from './layouts/LayoutAdmin'
 import AuthValidation from './components/AuthValidation'
 
 import ProductsList from './pages/ProductsList'
+import { InvoiceList } from './pages/InvoiceList'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -27,7 +28,12 @@ createRoot(document.getElementById('root')).render(
 
           <Route path='/products' element={<ProductsList />} />
 
-          
+          <Route path='invoices'>
+            <Route path='list' element={<InvoiceList />} />
+            <Route path=':id' element={<ProductsList />} />
+            <Route path='new' element={<ProductsList />} />
+            <Route path=':id/edit' element={<ProductsList />} />
+          </Route>
         </Route>
 
       </Route>

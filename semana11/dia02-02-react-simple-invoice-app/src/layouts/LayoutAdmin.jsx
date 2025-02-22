@@ -31,7 +31,7 @@ export const LayoutAdmin = () => {
 
         <div className="mt-3 flex gap-3">
           <Link to='/products'>Products</Link>
-          <Link to='/invoices'>Invoices</Link>
+          <Link to='/invoices/list'>Invoices</Link>
         </div>
       </header>
 

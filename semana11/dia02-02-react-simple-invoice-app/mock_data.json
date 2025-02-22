@@ -1,0 +1,113 @@
+[
+  {
+    "id": "3bd3285e-9511-4cf4-b956-47c6715934a8",
+    "fullName": "Alex Grim",
+    "address": "19 Union Terrace, London, E13EZ, United Kingdom",
+    "email": "alexgrim@mail.com",
+    "code": "XM9141",
+    "status": "paid",
+    "date": "2025-02-21",
+    "description": "Graphic Design",
+    "total": 556,
+    "currencySymbol": "$",
+    "items": [
+      { "name": "Banner Design", "qty": 1, "price": 156, "total": 156 },
+      { "name": "Email Design", "qty": 2, "price": 200, "total": 400 }
+    ]
+  },
+  {
+    "id": "7a3d2b6e-19a4-4b63-87d9-1f74501d4723",
+    "fullName": "Emma Stone",
+    "address": "45 Oxford Street, Manchester, M14 5GX, United Kingdom",
+    "email": "emma.stone@mail.com",
+    "code": "EM2023",
+    "status": "pending",
+    "date": "2025-02-22",
+    "description": "Web Development",
+    "total": 1200,
+    "currencySymbol": "$",
+    "items": [
+      { "name": "Website Design", "qty": 1, "price": 800, "total": 800 },
+      { "name": "Frontend Development", "qty": 2, "price": 200, "total": 400 }
+    ]
+  },
+  {
+    "id": "d52f9d3c-9bfb-4a4c-b927-98c8c6f3e345",
+    "fullName": "John Doe",
+    "address": "10 Baker Street, Liverpool, L10 3RB, United Kingdom",
+    "email": "john.doe@mail.com",
+    "code": "JD5567",
+    "status": "paid",
+    "date": "2025-02-20",
+    "description": "SEO Optimization",
+    "total": 750,
+    "currencySymbol": "$",
+    "items": [
+      { "name": "Keyword Research", "qty": 1, "price": 250, "total": 250 },
+      { "name": "On-page SEO", "qty": 1, "price": 500, "total": 500 }
+    ]
+  },
+  {
+    "id": "1bfe728d-3f72-45c2-90df-d6b048c6d7e3",
+    "fullName": "Sophia Lee",
+    "address": "8 Queen Street, Birmingham, B5 4RS, United Kingdom",
+    "email": "sophia.lee@mail.com",
+    "code": "SL7789",
+    "status": "draft",
+    "date": "2025-02-18",
+    "description": "Content Writing",
+    "total": 450,
+    "currencySymbol": "$",
+    "items": [
+      { "name": "Blog Post", "qty": 3, "price": 150, "total": 450 }
+    ]
+  },
+  {
+    "id": "f23a6c12-574b-499c-b2b7-2e763fd37c58",
+    "fullName": "Michael Scott",
+    "address": "172 Scranton Avenue, Scranton, PA, USA",
+    "email": "michael.scott@mail.com",
+    "code": "MS1234",
+    "status": "paid",
+    "date": "2025-02-15",
+    "description": "Corporate Branding",
+    "total": 900,
+    "currencySymbol": "$",
+    "items": [
+      { "name": "Logo Design", "qty": 1, "price": 400, "total": 400 },
+      { "name": "Business Cards", "qty": 2, "price": 250, "total": 500 }
+    ]
+  },
+  {
+    "id": "a98f6b4e-2831-4ddf-8706-04c6f13b2f6d",
+    "fullName": "David Kim",
+    "address": "25 Central Avenue, New York, NY, USA",
+    "email": "david.kim@mail.com",
+    "code": "DK3215",
+    "status": "pending",
+    "date": "2025-02-14",
+    "description": "Social Media Marketing",
+    "total": 650,
+    "currencySymbol": "$",
+    "items": [
+      { "name": "Facebook Ads", "qty": 1, "price": 300, "total": 300 },
+      { "name": "Instagram Campaign", "qty": 1, "price": 350, "total": 350 }
+    ]
+  },
+  {
+    "id": "34cb8a29-432e-41e9-b4fb-34e99f0b5fcd",
+    "fullName": "Natalie Portman",
+    "address": "57 Park Avenue, Los Angeles, CA, USA",
+    "email": "natalie.portman@mail.com",
+    "code": "NP9090",
+    "status": "draft",
+    "date": "2025-02-12",
+    "description": "Video Editing",
+    "total": 1100,
+    "currencySymbol": "$",
+    "items": [
+      { "name": "Commercial Video", "qty": 1, "price": 700, "total": 700 },
+      { "name": "Short Clips", "qty": 2, "price": 200, "total": 400 }
+    ]
+  }
+]

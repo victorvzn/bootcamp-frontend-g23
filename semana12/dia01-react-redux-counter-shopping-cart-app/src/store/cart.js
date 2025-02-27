@@ -39,10 +39,10 @@ export const cartSlice = createSlice({
       ]
     },
     removeToCart: (state, action) => {
-
+      // TODO: remover el producto del carrito de compras
     },
     clearCart: (cart) => {
-
+      // TODO: limpiar el carrito
     }
   }
 })

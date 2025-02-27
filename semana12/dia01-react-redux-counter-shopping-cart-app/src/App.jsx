@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Counter } from "./components/Counter"
 import ProductList from "./components/ProductList"
+import { ShoppingCart } from "./components/ShoppingCart"
 
 const App = () => {
   const [products, setProducts] = useState([])
@@ -12,11 +13,16 @@ const App = () => {
   }, [])
 
   return (
-    <>
-      <ProductList products={products} />
+    <main>
+      <section className="flex gap-2">
+        <ProductList products={products} />
+
+        <ShoppingCart />
+      </section>
+
       {/* <pre>{JSON.stringify(products, null, 2)}</pre> */}
       <Counter />
-    </>
+    </main>
   )
 }
 

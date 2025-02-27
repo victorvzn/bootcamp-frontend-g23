@@ -1,11 +1,11 @@
-// TODO: Listar los productos en lista como una grilla de 1 columna con botones que contengan el title y el thumbnail
+// DONE: Listar los productos en lista como una grilla de 1 columna con botones que contengan el title y el thumbnail
 
 export default function ProductList({ products }) {
   return (
     <section className="flex flex-col p-4">
       <h3 className="text-2xl mb-4">Product List</h3>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         {products && products.map(product => (
           <div
             key={product.id}

@@ -1,6 +1,12 @@
 // DONE: Listar los productos en lista como una grilla de 1 columna con botones que contengan el title y el thumbnail
 
+import { useDispatch } from "react-redux";
+import { addToCart } from "../store/cart";
+
 export default function ProductList({ products }) {
+
+  const dispatch = useDispatch()
+
   return (
     <section className="flex flex-col p-4">
       <h3 className="text-2xl mb-4">Product List</h3>
@@ -13,7 +19,12 @@ export default function ProductList({ products }) {
           >
             <img src={product.thumbnail} width={150} />
             <p className="text-center font-bold ">{product.title}</p>
-            <button className="bg-blue-400 p-2 min-w-14 rounded-lg cursor-pointer text-white">Add to cart</button>
+            <button
+              className="bg-blue-400 p-2 min-w-14 rounded-lg cursor-pointer text-white"
+              onClick={() => dispatch((addToCart(product)))}
+            >
+              Add to cart
+            </button>
           </div>
         ))}
       </div>

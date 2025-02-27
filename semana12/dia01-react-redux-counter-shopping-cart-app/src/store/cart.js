@@ -9,6 +9,13 @@ export const cartSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
       console.log(state, action)
+      const newProduct = action.payload
+
+      // Entra aquí cuando el producto es nuevo en el carrito de compras
+      return [
+        ...state,
+        newProduct
+      ]
     },
     removeToCart: (state, action) => {
 

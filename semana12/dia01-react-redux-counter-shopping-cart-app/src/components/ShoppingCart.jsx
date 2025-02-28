@@ -1,14 +1,39 @@
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+
+import { clearCart } from '../store/cart'
 
 export const ShoppingCart = () => {
   const cart = useSelector(state => state.cart)
 
+  const dispatch = useDispatch()
+
+  const isCartEmpty = cart.length === 0
+
+  if (isCartEmpty) {
+    return (
+      <div className='w-56'>
+        <h3 className="text-2xl mb-2">Shopping Cart</h3>
+
+        <div className="mb-2 bg-slate-100 h-32 rounded-lg p-4">
+          <p className='text-xl text-center text-slate-500'>
+            Shopping cart empty
+          </p>
+        </div>
+      </div>
+    )
+  }
+
   return (
-    <section className="w-52">
+    <section className="w-56">
       <h3 className="text-2xl mb-2">Shopping Cart</h3>
 
       <div className="mb-2">
-        <button className="bg-violet-400 p-2 min-w-14 rounded-lg cursor-pointer text-white w-full">Clean cart</button>
+        <button
+          className="bg-violet-400 p-2 min-w-14 rounded-lg cursor-pointer text-white w-full"
+          onClick={() => dispatch(clearCart())}
+        >
+          Clean cart
+        </button>
       </div>
 
       {/* <pre>{JSON.stringify(cart, null, 2)}</pre> */}

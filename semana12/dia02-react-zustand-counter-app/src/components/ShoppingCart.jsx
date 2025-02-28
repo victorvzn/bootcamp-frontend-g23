@@ -1,10 +1,12 @@
 import { formatNumber } from '../utils'
 
+import { useCartStore } from '../store/cart'
+
 export const ShoppingCart = () => {
+  const { cart } = useCartStore()
+
   const isCartEmpty = false
   // const isCartEmpty = cart.length === 0
-
-  const cart = []
 
   const total = 0
   // const total = cart.reduce((acc, product) => {
@@ -62,7 +64,7 @@ export const ShoppingCart = () => {
         <strong>TOTAL:</strong> <span>S/ {formatNumber(total)}</span>
       </div>
 
-      {/* <pre>{JSON.stringify(cart, null, 2)}</pre> */}
+      <pre>{JSON.stringify(cart, null, 2)}</pre>
     </section>
   )
 }

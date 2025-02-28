@@ -1,6 +1,10 @@
 // DONE: Listar los productos en lista como una grilla de 1 columna con botones que contengan el title y el thumbnail
 
+import { useCartStore } from '../store/cart'
+
 export default function ProductList({ products }) {
+  const { addToCart } = useCartStore()
+
   return (
     <section className="flex flex-col p-4">
       <h3 className="text-2xl mb-4">Product List</h3>
@@ -15,6 +19,7 @@ export default function ProductList({ products }) {
             <p className="text-center font-bold ">{product.title}</p>
             <button
               className="bg-blue-400 p-2 min-w-14 rounded-lg cursor-pointer text-white"
+              onClick={() => addToCart(product)}
             >
               Add to cart
             </button>

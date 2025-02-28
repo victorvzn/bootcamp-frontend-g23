@@ -6,6 +6,7 @@ import { ShoppingCart } from "./components/ShoppingCart"
 
 const App = () => {
   const [products, setProducts] = useState([])
+  const [open, setOpen] = useState(false)
 
   useEffect(() => {
     fetch('https://dummyjson.com/products')
@@ -16,9 +17,9 @@ const App = () => {
   return (
     <main>
       <section className="flex gap-2">
-        <ProductList products={products} />
+        <ProductList products={products} onOpen={() => setOpen(true)} />
 
-        <ShoppingCart />
+        <ShoppingCart open={open} onClose={() => setOpen(false)} />
       </section>
 
       {/* <pre>{JSON.stringify(products, null, 2)}</pre> */}

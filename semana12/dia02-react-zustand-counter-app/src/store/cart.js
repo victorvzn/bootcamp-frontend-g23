@@ -45,9 +45,15 @@ export const useCartStore = create(
     },
     removeFromCart: (id) => {
       // TODO: Remover el producto usando el id que tenemos en el parámetro de la función
+      set(state => {
+        const newCart = state.cart.filter(product => product.id !== id)
+
+        return { cart: newCart }
+      })
     },
     clearCart: () => {
       // TODO: Limpiar el carrito de compras
+      set(state => ({ cart: [] }))
     }
   })
 )

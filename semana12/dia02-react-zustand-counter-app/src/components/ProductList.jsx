@@ -2,12 +2,15 @@
 
 import { useCartStore } from '../store/cart'
 
-export default function ProductList({ products }) {
+export default function ProductList({ products, onOpen }) {
   const { addToCart } = useCartStore()
 
   return (
     <section className="flex flex-col p-4">
-      <h3 className="text-2xl mb-4">Product List</h3>
+      <div className='flex justify-between items-center'>
+        <h3 className="text-2xl mb-4">Product List</h3>
+        <button onClick={onOpen}>🛒</button>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         {products && products.map(product => (

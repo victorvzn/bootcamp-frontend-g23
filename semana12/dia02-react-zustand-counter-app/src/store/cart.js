@@ -10,12 +10,19 @@ export const useCartStore = create(
 
     // Actions
     addToCart: (newProduct) => {
+      // TODO: Añadir la lógica para cuando el producto ya existe en el carrito de compras
+      // TODO: Aquí incrementaremos el campo quantity
+
       // Esta línea seejecuta cuando el producto es nuevo en el carrito de compras
       set(state => ({
         cart: [...state.cart, { ...newProduct, quantity: 1 }]
       }))
     },
-    removeFromCart: (id) => {},
-    clearCart: () => {}
+    removeFromCart: (id) => {
+      // TODO: Remover el producto usando el id que tenemos en el parámetro de la función
+    },
+    clearCart: () => {
+      // TODO: Limpiar el carrito de compras
+    }
   })
 )

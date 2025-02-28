@@ -17,6 +17,8 @@ export const useCounterStore = create(
       set(state => ({ count: state.count - 1 }))
     },
     // TODO: Implementar la función incrementByValue y usarla en el componente <Counter />
-    // incrementByValue
+    incrementByValue: (value) => {
+      set(state => ({ count: state.count + value }))
+    }
   })
 )

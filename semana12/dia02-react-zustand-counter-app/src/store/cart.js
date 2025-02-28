@@ -10,10 +10,35 @@ export const useCartStore = create(
 
     // Actions
     addToCart: (newProduct) => {
-      // TODO: Añadir la lógica para cuando el producto ya existe en el carrito de compras
-      // TODO: Aquí incrementaremos el campo quantity
+      // ¿Existe el nuevo producto en el carrito de compras?
+      const currentCartState = get().cart
 
-      // Esta línea seejecuta cuando el producto es nuevo en el carrito de compras
+      const productInCartIndex = currentCartState.findIndex(
+        product => product.id === newProduct.id
+      )
+
+      console.log(productInCartIndex)
+
+      if (productInCartIndex >= 0) {
+        // TODO: Añadir la lógica para cuando el producto ya existe en el carrito de compras
+        // TODO: Aquí incrementaremos el campo quantity
+        const newCart = currentCartState.map(product => {
+          if (product.id === newProduct.id) {
+            return {
+              ...product,
+              quantity: product.quantity + 1
+            }
+          }
+
+          return product
+        })
+
+        set(() => ({ cart: newCart }))
+
+        return
+      }
+
+      // Esta línea se ejecuta cuando el producto es nuevo en el carrito de compras
       set(state => ({
         cart: [...state.cart, { ...newProduct, quantity: 1 }]
       }))

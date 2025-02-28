@@ -50,7 +50,7 @@ export const ShoppingCart = () => {
             key={product.id}
           >
             <span>{product.title}</span>
-            <span>S/ {product.price} (qty: {product.qty})</span>
+            <span>S/ {product.price} (qty: {product.quantity})</span>
             <button
               className="bg-red-400 p-1 rounded-lg cursor-pointer text-white"
             >

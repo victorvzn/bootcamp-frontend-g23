@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'
 
-import { clearCart } from '../store/cart'
+import { clearCart, removeToCart } from '../store/cart'
+import { formatNumber } from '../utils'
 
 export const ShoppingCart = () => {
   const cart = useSelector(state => state.cart)
@@ -8,6 +9,14 @@ export const ShoppingCart = () => {
   const dispatch = useDispatch()
 
   const isCartEmpty = cart.length === 0
+
+  const total = cart.reduce((acc, product) => {
+    const qty = product.qty
+    const price = product.price
+    const subtotal = qty * price
+
+    return acc + subtotal
+  }, 0)
 
   if (isCartEmpty) {
     return (
@@ -36,8 +45,6 @@ export const ShoppingCart = () => {
         </button>
       </div>
 
-      {/* <pre>{JSON.stringify(cart, null, 2)}</pre> */}
-
       <ul className='flex flex-col gap-2'>
         {cart && cart.map(product => (
           <li
@@ -48,13 +55,19 @@ export const ShoppingCart = () => {
             <span>S/ {product.price} (qty: {product.qty})</span>
             <button
               className="bg-red-400 p-1 rounded-lg cursor-pointer text-white"
+              onClick={() => dispatch(removeToCart(product.id))}
             >
               ❌
             </button>
           </li>
         ))}
-        
       </ul>
+
+      <div className='mt-4 pt-4 font-bold bg-amber-100 px-4 py-2 flex justify-between'>
+        <strong>TOTAL:</strong> <span>S/ {formatNumber(total)}</span>
+      </div>
+
+      {/* <pre>{JSON.stringify(cart, null, 2)}</pre> */}
     </section>
   )
 }

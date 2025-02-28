@@ -40,9 +40,12 @@ export const cartSlice = createSlice({
     },
     removeToCart: (state, action) => {
       // TODO: remover el producto del carrito de compras
+      const productId = action.payload
+
+      return state.filter(product => product.id !== productId)
     },
     clearCart: (state) => {
-      // TODO: limpiar el carrito
+      // DONE: limpiar el carrito
       return [] // Estamos devolviendo el nuevo estado de nuestro slice
     }
   }
